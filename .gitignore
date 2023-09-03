@@ -8,7 +8,6 @@
 # testing
 /coverage
 /build
-src/components/experienceCard
 
 # misc
 .DS_Store
