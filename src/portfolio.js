@@ -22,7 +22,7 @@ const illustration = {
 const greeting = {
   username: "Karrtik Baheti",
   title: "Hey, I'm Karrtik",
-  subTitle: emoji("looking for an enivronment where work is all fun. Always looking for a positive aspect in every scenario in my life in every difficult situation"),
+  subTitle: emoji("🌟 Seeking an environment where work is pure fun! Always embracing positivity in every aspect of life, even in the face of challenges. 🚀"),
   resumeLink:
   "https://drive.google.com/file/d/1YqxssB4ve3tsexL9raAlYTpy0b_Ftz-s/view",  
   // "https://drive.google.com/file/d/1gvxMskuw4qOjjZMlmnPUXIWn-QtDWY6y/view?usp=sharing",
@@ -43,37 +43,47 @@ const socialMediaLinks = {
 
 // Skills Section
 
+
+
 const skillsSection = {
   title: "What I do",
-  subTitle: "Passionate ML Engineer | Data Scientist | Freelancer",
+  subTitle: "Passionate Data Scientist | Machine Learning Engineer | Freelancer",
   skills: [
     emoji("⚡ Developed a Chat Bot with NLP deployed using Deep Learning"),
     emoji(
       "⚡ Progressive Power BI dashboards for college and CCC, Gandhinagar"
     ),
-    emoji("⚡ Integration of Machine Learning model with web frameworks(API)")
+    emoji("⚡ Integration of Machine Learning model with web frameworks(API)"),
+    emoji("⚡ Implemented predictive models for Pension Classification using ML"),
+    emoji("⚡ Constructed Dropout/Migration Analysis Dashboard with Power BI"),
+    emoji("⚡ Proficient in analyzing and visualizing complex data sets"),
+    emoji("⚡ Strong background in statistical analysis and hypothesis testing")
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "Html 5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "CSS3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "SQL Database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
       skillName: "Python",
       fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "R",
+      fontAwesomeClassname: "fa-brands fa-r-project"
+    },
+    {
+      skillName: "TensorFlow",
+      fontAwesomeClassname: "fa-brands fa-tensorflow"
+    },
+    {
+      skillName: "PyTorch",
+      fontAwesomeClassname: "fa-solid fa-fire"
+      // <i class="fa-solid fa-fire fa-beat"></i>
+    },
+    {
+      skillName: "Power BI",
+      fontAwesomeClassname: "fa-regular fa-chart-bar fa-rotate-270"
+      // <i class="fa-regular fa-chart-bar fa-rotate-270"></i>
     }
+
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -98,11 +108,11 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: true,
   experience: [
     {
-      Stack: "Python", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      Stack: "Python",
+      progressPercentage: "90%"
     },
     {
       Stack: "Machine Learning",
@@ -111,9 +121,21 @@ const techStack = {
     {
       Stack: "Deep Learning",
       progressPercentage: "60%"
+    },
+    {
+      Stack: "Natural Language Processing",
+      progressPercentage: "75%"
+    },
+    {
+      Stack: "Data Visualization (Power BI)",
+      progressPercentage: "65%"
+    },
+    {
+      Stack: "Statistical Analysis",
+      progressPercentage: "80%"
     }
   ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+  displayCodersrank: false
 };
 
 
@@ -155,21 +177,26 @@ const workExperiences = {
 To know how to get github key look at readme.md */
 
 const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  showGithubProfile: "false", // Set true or false to show Contact profile using Github, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
 
 const bigProjects = {
   title: "Projects",
-  subtitle: "SOME IDEAS WHICH WILL BE EVOLVING INTO SOMETHING NEW",
+  // subtitle: "SOME IDEAS WHICH WILL BE EVOLVING INTO SOMETHING NEW",
+  subtitle: "Check out some of my impactful projects in the field of Machine Learning and Data Science:",
+  
   projects: [
     {
       image: require("./assets/images/chat.png"),
       projectName: "Med Bot",
+      // projectDesc:
+      //   "Medical assistance to everybody should be accessible at any time without going to the medical offices. Our goal is to be able to give medical assistance to anyone who visits us by giving them suggestions for medicines, diet or booking an appointment with the nearby clinic",
       projectDesc:
-        "Medical assistance to everybody should be accessible at any time without going to the medical offices. Our goal is to be able to give medical assistance to anyone who visits us by giving them suggestions for medicines, diet or booking an appointment with the nearby clinic",
+      "Providing accessible medical assistance at any time, suggesting medicines, diet plans, and facilitating appointments through a chatbot. Utilized NLP and deployed using deep learning.",
+    
       footerLink: [
         {
           name: "Med Bot",
@@ -181,8 +208,11 @@ const bigProjects = {
     {
       image: require("./assets/images/powerbi.png"),
       projectName: "DropOut / Migration Analysis Dashboard",
+      // projectDesc:
+      //   "The emergence of Covid-19 caused a large shift to transfer from one place to another which raised the rate of dropout and migration to another level.Our aim is to visualize that Data in Power BI dashboard while generating a way to predicting the students drop-out scenario.",
       projectDesc:
-        "The emergence of Covid-19 caused a large shift to transfer from one place to another which raised the rate of dropout and migration to another level.Our aim is to visualize that Data in Power BI dashboard while generating a way to predicting the students drop-out scenario.",
+      "Visualized and predicted student dropout scenarios using Power BI. Explored geospatial patterns and advanced analytics to understand migration trends.",
+   
       footerLink: [
         {
           name: "Power BI Dashboard",
@@ -195,7 +225,8 @@ const bigProjects = {
       image: require("./assets/images/chat.png"),
       projectName: "Med-BOT(Chat BOT)",
       projectDesc:
-        "The use of NLP in this repository for creating vocabulary based on your intents which is used to form a matchig pattern in your intents file and then from that particular tag the random response is predicted.",
+        "Implemented NLP to create a vocabulary for intents and developed a chatbot for medical assistance with a predefined set of responses based on user queries.",
+     
       footerLink: [
         {
           name: "Med-BOT_ChatBOT",
@@ -208,7 +239,8 @@ const bigProjects = {
       image: require("./assets/images/Face_Detection.png"),
       projectName: "Emotion detection",
       projectDesc:
-        "The purpose of this project is to evaluate the performance of two pretrained models for emotion detection using the EMOTIC dataset. Emotion detection is crucial for understanding human behavior and enhancing human-computer interaction. By comparing pretrained models such as VGG19 and AlexNet, the project aims to determine their effectiveness in accurately classifying emotions depicted in images.",
+        "Evaluated the performance of pretrained models (VGG19, AlexNet) for emotion detection using the EMOTIC dataset. Investigated effectiveness in classifying emotions depicted in images.",
+      
       footerLink: [
         {
           name: "Flask_Face_detection",
@@ -226,10 +258,12 @@ const bigProjects = {
 
 const achievementSection = {
   title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+  // subtitle:
+  //   "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
 
-  achievementsCards: [
+  subtitle:
+  "Explore some of my notable achievements, certifications, and awards that showcase my expertise in Machine Learning and Data Science.",
+achievementsCards: [
     {
       title: "Certificate",
       subtitle:"Data Analytics with Python – STTP organized by GUNI and GUJCOST-DST",
