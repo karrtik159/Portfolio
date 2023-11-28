@@ -2,14 +2,17 @@ import React from "react";
 import "./SoftwareSkill.scss";
 import {skillsSection} from "../../portfolio";
 import {
-  // DiDatabase,
-  DiDjango
+  DiDatabase,
+  DiDjango,
   // DiFirebase,
-  // DiPython,
+  DiPython,
+  DiDocker,
   // DiReact,
   // DiZend
 } from "react-icons/di";
-
+import { FaRProject } from "react-icons/fa6";
+import { SiTensorflow,SiPytorch,SiPowerbi } from "react-icons/si";
+ 
 export default function SoftwareSkill() {
   return (
     <div>
@@ -29,7 +32,15 @@ export default function SoftwareSkill() {
           })}
           <li>
             <picture>
+              <DiPython size="3rem" />
               <DiDjango size="3rem" />
+              <DiDatabase size="3rem" />
+              <SiTensorflow size="3rem" />
+              <SiPytorch size="3rem" />
+              <SiPowerbi size="3rem" />
+              <FaRProject size="3rem" />
+              <DiDocker size="3rem" />
+
             </picture>
           </li>
         </ul>
