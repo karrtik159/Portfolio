@@ -45,6 +45,48 @@ const socialMediaLinks = {
 
 
 
+// const skillsSection = {
+//   title: "What I do",
+//   subTitle: "Passionate Data Scientist | Machine Learning Engineer | Freelancer",
+//   skills: [
+//     emoji("⚡ Developed a Chat Bot with NLP deployed using Deep Learning"),
+//     emoji(
+//       "⚡ Progressive Power BI dashboards for college and CCC, Gandhinagar"
+//     ),
+//     emoji("⚡ Integration of Machine Learning model with web frameworks(API)"),
+//     emoji("⚡ Implemented predictive models for Pension Classification using ML"),
+//     emoji("⚡ Constructed Dropout/Migration Analysis Dashboard with Power BI"),
+//     emoji("⚡ Proficient in analyzing and visualizing complex data sets"),
+//     emoji("⚡ Strong background in statistical analysis and hypothesis testing")
+//   ],
+
+//   softwareSkills: [
+//     {
+//       skillName: "Python",
+//       fontAwesomeClassname: "fab fa-python"
+//     },
+//     {
+//       skillName: "R",
+//       fontAwesomeClassname: "fa-brands fa-r-project"
+//     },
+//     {
+//       skillName: "TensorFlow",
+//       fontAwesomeClassname: "fa-brands fa-tensorflow"
+//     },
+//     {
+//       skillName: "PyTorch",
+//       fontAwesomeClassname: "fa-solid fa-fire"
+//       // <i class="fa-solid fa-fire fa-beat"></i>
+//     },
+//     {
+//       skillName: "Power BI",
+//       fontAwesomeClassname: "fa-regular fa-chart-bar fa-rotate-270"
+//       // <i class="fa-regular fa-chart-bar fa-rotate-270"></i>
+//     }
+
+//   ],
+//   display: true // Set false to hide this section, defaults to true
+// };
 const skillsSection = {
   title: "What I do",
   subTitle: "Passionate Data Scientist | Machine Learning Engineer | Freelancer",
@@ -60,6 +102,9 @@ const skillsSection = {
     emoji("⚡ Strong background in statistical analysis and hypothesis testing")
   ],
 
+  /* Make Sure to include correct Font Awesome Classname to view your icon
+https://fontawesome.com/icons?d=gallery */
+
   softwareSkills: [
     {
       skillName: "Python",
@@ -67,27 +112,39 @@ const skillsSection = {
     },
     {
       skillName: "R",
-      fontAwesomeClassname: "fa-brands fa-r-project"
+      fontAwesomeClassname: "fab fa-r-project"
     },
     {
       skillName: "TensorFlow",
-      fontAwesomeClassname: "fa-brands fa-tensorflow"
+      fontAwesomeClassname: "fab fa-tensorflow"
+      // <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+      // <polygon fill="#ffa000" points="16,39.609 23,43.609 23,4 16,8"></polygon><polygon fill="#ffa000" points="23,12.433 6,22.25 6,13.75 23,3.933"></polygon><polygon fill="#ffb300" points="32,39.609 25,43.609 25,4 32,8"></polygon><polygon fill="#ffb300" points="25,12.433 42,22.25 42,13.75 25,3.933"></polygon><polygon fill="#ffb300" points="29,19.732 29,27.365 36,31.407 36,23.775"></polygon>
+      //</svg>
+       
     },
     {
       skillName: "PyTorch",
-      fontAwesomeClassname: "fa-solid fa-fire"
-      // <i class="fa-solid fa-fire fa-beat"></i>
+      fontAwesomeClassname: "fas fa-fire"
+    },
+    {
+      skillName: "SQL Database",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "HTML5",
+      fontAwesomeClassname: "fab fa-html5"
+    },
+    {
+      skillName: "CSS3",
+      fontAwesomeClassname: "fab fa-css3-alt"
     },
     {
       skillName: "Power BI",
-      fontAwesomeClassname: "fa-regular fa-chart-bar fa-rotate-270"
-      // <i class="fa-regular fa-chart-bar fa-rotate-270"></i>
+      fontAwesomeClassname: "fas fa-chart-bar"
     }
-
   ],
   display: true // Set false to hide this section, defaults to true
 };
-
 // Education Section
 
 const educationInfo = {
