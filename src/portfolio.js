@@ -278,7 +278,20 @@ achievementsCards: [
           url: ""
         }
       ]
+    },
+  {
+      title: "Neural Networks and Deep Learning",
+      subtitle: "Issued by DeepLearning.AI",
+      image: require("./assets/images/Coursera Neural Networks.jpg"), // Add the image path
+      footerLink: [{ name: "Certificate", url: "https://www.coursera.org/account/accomplishments/records/CBQCAVPMU9ZN" }]
+    },
+    {
+      title: "Foundations: Data, Data, Everywhere",
+      subtitle: "Issued by Google",
+      image: require("./assets/images/CERTIFICATE.jpeg"), // Add the image path
+      footerLink: [{ name: "Certificate", url: "https://www.coursera.org/account/accomplishments/records/TBA6JM9XW32P" }]
     }
+  
   ],
   display: true // Set false to hide this section, defaults to true
 };
