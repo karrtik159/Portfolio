@@ -87,37 +87,90 @@ const educationInfo = {
 
 // Your top 3 proficient stacks/tech experience
 
+// const techStack = {
+//   viewSkillBars: true,
+//   experience: [
+//     {
+//       Stack: "Python",
+//       progressPercentage: "90%"
+//     },
+//     {
+//       Stack: "Machine Learning",
+//       progressPercentage: "80%"
+//     },
+//     {
+//       Stack: "Deep Learning",
+//       progressPercentage: "60%"
+//     },
+//     {
+//       Stack: "Natural Language Processing",
+//       progressPercentage: "75%"
+//     },
+//     {
+//       Stack: "Data Visualization (Power BI)",
+//       progressPercentage: "65%"
+//     },
+//     {
+//       Stack: "Statistical Analysis",
+//       progressPercentage: "80%"
+//     }
+//   ],
+//   displayCodersrank: false
+// };
 const techStack = {
-  viewSkillBars: true,
-  experience: [
-    {
-      Stack: "Python",
-      progressPercentage: "90%"
-    },
-    {
-      Stack: "Machine Learning",
-      progressPercentage: "80%"
-    },
-    {
-      Stack: "Deep Learning",
-      progressPercentage: "60%"
-    },
-    {
-      Stack: "Natural Language Processing",
-      progressPercentage: "75%"
-    },
-    {
-      Stack: "Data Visualization (Power BI)",
-      progressPercentage: "65%"
-    },
-    {
-      Stack: "Statistical Analysis",
-      progressPercentage: "80%"
-    }
-  ],
-  displayCodersrank: false
+ viewSkillBars: true,
+ experience: [
+   {
+     Stack: "Python",
+     progressPercentage: "90%"
+   },
+   {
+     Stack: "Machine Learning",
+     progressPercentage: "80%"
+   },
+   {
+     Stack: "Deep Learning",
+     progressPercentage: "70%"
+   },
+   {
+     Stack: "Natural Language Processing",
+     progressPercentage: "75%"
+   },
+   {
+     Stack: "Computer Vision",
+     progressPercentage: "65%"
+   },
+   {
+     Stack: "Data Visualization (Power BI)",
+     progressPercentage: "65%"
+   },
+   {
+     Stack: "Statistical Analysis",
+     progressPercentage: "80%"
+   },
+   {
+     Stack: "TensorFlow",
+     progressPercentage: "70%"
+   },
+   {
+     Stack: "PyTorch",
+     progressPercentage: "65%"
+   },
+   {
+     Stack: "Scikit-learn",
+     progressPercentage: "75%"
+   },
+   {
+     Stack: "Pandas",
+     progressPercentage: "85%"
+   },
+   {
+     Stack: "NumPy",
+     progressPercentage: "80%"
+   }
+ ],
+ displayCodersrank: false
 };
-
 
 // Work experience section
 
