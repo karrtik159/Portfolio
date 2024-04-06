@@ -24,7 +24,7 @@ const greeting = {
   title: "Hey, I'm Karrtik",
   subTitle: emoji("🌟 Seeking an environment where work is pure fun! Always embracing positivity in every aspect of life, even in the face of challenges. 🚀"),
   resumeLink:
-    "https://drive.google.com/file/d/19aaiZgZW7BrPlRnsDWb20r9T-hIGuCSI/view?usp=sharing",
+    "https://drive.google.com/file/d/1NMZGn_TKBzL-P3AfY71jLvg4h_Pv9H-C/view?usp=sharing",
   // "https://drive.google.com/file/d/1xPQQXiZ5n97tvC45PSUsxA29EqqaQYAy/view?usp=sharing",  
   // "https://drive.google.com/file/d/1gvxMskuw4qOjjZMlmnPUXIWn-QtDWY6y/view?usp=sharing",
      // Set to empty to hide the button
