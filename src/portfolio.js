@@ -125,15 +125,40 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Research Scientist",
+      role: "AI Engineer Intern",
+      company: "Aukture Technologies Pvt. Ltd",
+      companylogo: require("./assets/images/aukture.png"),
+      date: "Jan 2023 – Mar 2023",
+      desc: "Gained hands-on experience in AI and machine learning technologies.",
+      descBullets: [
+        "Drove image preprocessing efforts with advanced libraries, honing skills in data manipulation and optimization.",
+        "Implemented machine learning models for predicting body measurements and assessing human posture, showcasing proficiency in algorithm development.",
+        "Engaged in ongoing learning and professional development, staying abreast of the latest advancements in AI technologies and methodologies.",
+        "Actively participated in brainstorming sessions and idea generation, contributing innovative solutions to complex problems and driving continuous improvement."
+      ]
+    },
+    {
+      role: "Freelance Machine Learning Engineer",
+      company: "Self-Employed",
+      date: "May 2023 – Dec 2023",
+      desc: "Developed innovative machine learning solutions for various clients.",
+      descBullets: [
+        "Boosted object detection accuracy by 20% on custom images with new objects using Detectron2.",
+        "Developed cutting-edge algorithms for 3D wood and bark segmentation.",
+        "Implemented ChatGPT-powered chatbots to streamline client communication and support.",
+        "Leveraged ChatGPT for quote analysis and automated customer service solutions."
+      ]
+    },
+    {
+      role: "Research Intern - Emotion Recognition",
       company: "Ganpat University",
       companylogo: require("./assets/images/logo_2020.png"),
       date: "Jan 2023 – May 2023",
-      desc: "Emotion Recognition using different Deep Learning Techniques",
+      desc: "Conducted research on emotion recognition using deep learning techniques.",
       descBullets: [
-        "Conducted data preprocessing and feature engineering tasks.",
-        "Developed Machine Learning models on different Deep learning architecture.",
-        "Integrated Django or Flask as API services to handle backend operations."
+        "Achieved a 15% boost in emotion recognition accuracy by fine-tuning models and expanding the dataset to 26 emotions.",
+        "Improved emotion labeling precision on the EMOTIC dataset by 10% through model refinement.",
+        "Transferred learned models to new tasks, delivering enhanced performance."
       ]
     },
     {
