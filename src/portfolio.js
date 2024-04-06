@@ -7,6 +7,7 @@ import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your
 
 // Splash Screen
 
+
 const splashScreen = {
   enabled: true, // set false to disable splash screen
   animation: splashAnimation,
