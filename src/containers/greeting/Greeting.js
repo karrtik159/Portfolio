@@ -1,67 +1,59 @@
 import React, {useContext} from "react";
-import {Fade} from "react-reveal";
-import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-
-import {illustration, greeting} from "../../portfolio";
+import classNames from "classnames";
+import {greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
-  if (!greeting.displayGreeting) {
-    return null;
-  }
+
+  if (!greeting.displayGreeting) return null;
+
   return (
-    <Fade bottom duration={1000} distance="40px">
-      <div className="greet-main" id="greeting">
+    <>
+      <section
+        className={classNames("greet-main", {"dark-mode": isDark})}
+        id="greeting"
+      >
         <div className="greeting-main">
           <div className="greeting-text-div">
-            <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
-              </h1>
-              <p
-                className={
-                  isDark
-                    ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
-                }
-              >
-                {greeting.subTitle}
-              </p>
-              <SocialMedia />
-              <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
-                {greeting.resumeLink && (
-                  <Button
-                    text="See my resume"
-                    newTab={true}
-                    href={greeting.resumeLink}
-                  />
-                )}
-              </div>
+            <h1 className="greeting-brand">{greeting.title}</h1>
+            <p className="greeting-text-p">{greeting.subTitle}</p>
+            <div className="button-greeting-div">
+              <Button text="Contact" href="#contact" />
+              {greeting.resumeLink && (
+                <Button
+                  text="Resume"
+                  newTab
+                  href={greeting.resumeLink}
+                  className="button-ghost"
+                />
+              )}
             </div>
+            <SocialMedia />
           </div>
-          <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/sign-up.png")}
-              ></img>
-            )}
-          </div>
+          <nav className="practice-poster" aria-label="Practices">
+            <a href="#practice">Applied engineer</a>
+            <a href="#practice">Concept implementation</a>
+            <a href="#practice">AI curator</a>
+          </nav>
         </div>
-      </div>
-    </Fade>
+      </section>
+      <section
+        className={classNames("snapshot-strip", {"dark-mode": isDark})}
+        aria-label="Resume snapshot"
+      >
+        <dl>
+          {greeting.snapshot.map(row => (
+            <div className="snapshot-item" key={row.label}>
+              <dt>{row.label}</dt>
+              <dd>{row.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </>
   );
 }

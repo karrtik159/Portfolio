@@ -1,7 +1,63 @@
 @import "../_globalColor";
 
+.app-shell {
+  min-height: 100vh;
+  background: $pageAtmosphereLight;
+  color: $textColor;
+  transition: background 0.2s ease;
+}
+
+.app-shell.dark-mode {
+  background: $pageAtmosphereDark;
+}
+
 .dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+  color: $textColorDark;
+}
+
+.foundation-grid {
+  width: min(1240px, 90%);
+  margin: 0 auto;
+  padding: 3.5rem 0;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.foundation-grid > .education-section,
+.foundation-grid > .react-reveal,
+.foundation-grid #achievements.main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.foundation-grid .achievement-cards-div {
+  grid-template-columns: 1fr;
+}
+
+.foundation-grid .education-card-border {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .foundation-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.section-eyebrow {
+  display: block;
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $buttonColor;
+}
+
+.dark-mode .section-eyebrow {
+  color: $accentTeal;
 }

@@ -4,20 +4,28 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: radial-gradient(
+      ellipse 70% 50% at 50% 40%,
+      rgba(45, 212, 191, 0.12),
+      transparent 60%
+    ),
+    #0b1220;
+  color: #f8fafc;
 }
 
 .splash-animation-container {
-  height: 50vh;
+  height: 40vh;
 }
 
 .splash-title-container {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-decoration: none;
 }
+
 .splash-title {
-  font-family: "Agustina Regular", cursive;
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   padding: 0 20px;
+  color: #f8fafc;
 }

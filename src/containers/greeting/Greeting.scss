@@ -1,119 +1,164 @@
 @import "../../_globalColor";
 
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
 .greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  padding: 5.5rem 0 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .greeting-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3rem;
+  align-items: end;
+  width: 100%;
 }
 
-.subTitle {
-  color: $subTitle !important;
+.greeting-brand {
+  margin: 0;
+  font-size: clamp(2.7rem, 5.4vw, 4.6rem);
+  line-height: 0.96;
+  font-weight: 700;
+  color: $titleColor;
 }
 
-.greeting-main {
-  display: flex;
-}
-
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.button-greeting-div {
-  display: flex;
-  margin-top: 20px;
-}
-
-.greeting-text {
-  font-size: 70px;
-  line-height: 1.1;
-  color: $textColor !important;
+.dark-mode .greeting-brand {
+  color: $textColorDark;
 }
 
 .greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
+  margin: 1.1rem 0 0;
+  max-width: 34rem;
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: $cardSubtitle;
 }
 
-.greeting-image-div > img {
-  max-width: 100%;
-  height: auto;
+.dark-mode .greeting-text-p {
+  color: $inkMuted;
 }
 
-.wave-emoji {
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite;
-  animation-name: wave;
-  display: inline-block;
-  transform-origin: 70% 70%;
+.button-greeting-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
 }
 
-@keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
+.button-greeting-div .main-button {
+  margin: 0;
+}
+
+.practice-poster {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0;
+  padding-left: 1.5rem;
+  border-left: 1px solid $lightBorder1;
+}
+
+.practice-poster a {
+  font-family: "Outfit", "IBM Plex Sans", sans-serif;
+  font-size: clamp(1.55rem, 2.3vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: $titleColor;
+  text-decoration: none;
+}
+
+.dark-mode .practice-poster a {
+  color: $textColorDark;
+}
+
+.practice-poster a:hover {
+  color: $buttonColor;
+  text-decoration: underline;
+}
+
+.dark-mode .practice-poster a:hover {
+  color: $accentOnDark;
+}
+
+.snapshot-strip {
+  width: min(1120px, 90%);
+  margin: 0 auto 1rem;
+}
+
+.snapshot-strip dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid $lightBorder1;
+}
+
+.snapshot-item {
+  padding: 1rem 1.25rem 1rem 0;
+  border-bottom: 1px solid $lightBorder1;
+}
+
+.snapshot-item dt {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+  color: $subTitle;
+}
+
+.snapshot-item dd {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $titleColor;
+}
+
+.dark-mode .snapshot-item dd {
+  color: $textColorDark;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .greeting-text-div {
+    animation: hero-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
-  .greeting-text-p {
-    font-size: 20px;
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
-@media (max-width: 768px) {
-  .button-greeting-div {
-    justify-content: space-around;
-  }
-  .greeting-text {
-    font-size: 30px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
-  .greeting-main {
+
+@media (max-width: 900px) {
+  .greet-main {
+    width: 100%;
+    padding: 5.5rem 1rem 1.5rem;
     display: block;
   }
-  .greeting-image-div {
-    height: 256px;
-  }
-}
 
-@media (max-width: 320px) {
-  .main {
-    width: auto;
+  .greeting-main {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .practice-poster {
+    display: none;
+  }
+
+  .snapshot-strip {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .snapshot-strip dl {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,36 +1,54 @@
-@font-face {
-  font-family: "Agustina Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Agustina Regular"),
-    url("./assets/fonts/Agustina.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"),
-    url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
-  font-display: swap;
-}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: "IBM Plex Mono", Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 html,
 body {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
-  font: 19px / 23px Montserrat, "Montserrat", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #24302a;
+  background-color: #f3f5f4;
 }
-/* Media Query */
+
+:focus-visible {
+  outline: 2px solid #0c5c42;
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+.logo-name,
+.greeting-brand,
+.section-title {
+  font-family: "Outfit", "IBM Plex Sans", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 1380px) {
   html,
   body {
-    font-size: rem;
-    line-height: normal;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
   }
 }

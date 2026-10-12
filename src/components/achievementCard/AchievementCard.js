@@ -18,6 +18,8 @@ export default function AchievementCard({cardInfo, isDark}) {
           src={cardInfo.image}
           alt={cardInfo.imageAlt || "Card Thumbnail"}
           className="card-image"
+          loading="lazy"
+          decoding="async"
         ></img>
       </div>
       <div className="certificate-detail-div">
@@ -28,9 +30,9 @@ export default function AchievementCard({cardInfo, isDark}) {
           {cardInfo.description}
         </p>
       </div>
-      <div className="certificate-card-footer">
-        {cardInfo.footer.map((v, i) => {
-          return (
+      {cardInfo.footer && cardInfo.footer.length > 0 && (
+        <div className="certificate-card-footer">
+          {cardInfo.footer.map((v, i) => (
             <span
               key={i}
               className={
@@ -40,9 +42,9 @@ export default function AchievementCard({cardInfo, isDark}) {
             >
               {v.name}
             </span>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

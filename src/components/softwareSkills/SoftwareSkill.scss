@@ -3,29 +3,43 @@
 .dev-icons {
   padding-left: 0;
   list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.software-skill-inline svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-.software-skill-inline > i {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
   color: $subTitle;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.software-skill-inline > i:hover {
+.software-skill-inline:hover {
   color: $skillsColor;
+  transform: translateY(-3px);
 }
+
+.dark-mode .software-skill-inline {
+  color: $inkMuted;
+}
+
+.dark-mode .software-skill-inline:hover {
+  color: $accentTeal;
+}
+
 .software-skill-inline > p {
-  color: $subTitle;
-  font-size: 10px;
-}
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+  margin: 0.35rem 0 0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }

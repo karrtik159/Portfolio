@@ -1,84 +1,105 @@
 @import "../../_globalColor";
 
+#contact.main {
+  width: min(1240px, 90%);
+  padding: 3.5rem 0 4.5rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  margin: 0 auto;
+}
+
 .contact-div-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
 }
 
 .dark-mode a {
   color: $textColorDark;
 }
 
-.contact-div-main > * {
-  flex: 1;
-}
-
 .contact-title {
-  font-size: 45px;
-  font-weight: 400;
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  font-family: "Outfit", "IBM Plex Sans", sans-serif;
+  margin: 0;
 }
 
 .contact-detail,
 .contact-detail-email {
-  margin-top: 20px;
-  font-size: 40px;
-  font-weight: 400;
-  color: $subTitle;
+  margin-top: 0.75rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  color: $buttonColor;
   text-decoration: none;
+  display: inline-block;
+}
+
+.dark-mode .contact-detail,
+.dark-mode .contact-detail-email {
+  color: $accentTeal;
 }
 
 .contact-detail:hover,
 .contact-detail-email:hover {
-  color: $textColor;
-  text-shadow: 2px 1px 2px $contactDetailHoverTS;
-  transition: all 0.3s;
+  color: $titleColor;
+  text-shadow: none;
+  transition: color 0.2s;
+}
+
+.dark-mode .contact-detail:hover,
+.dark-mode .contact-detail-email:hover {
+  color: $textColorDark;
 }
 
 .contact-subtitle {
-  text-transform: uppercase;
+  text-transform: none;
+  color: $subTitle;
+  max-width: 32rem;
+  margin: 0.75rem 0 0;
+}
+
+.dark-mode .contact-subtitle {
+  color: $inkMuted;
 }
 
 .contact-text-div {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.contact-text-div .social-media-div {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-text-div {
+    align-items: center;
+  }
 }
 
 .contact-margin-top {
-  margin-top: 4rem;
+  margin-top: 0;
 }
 
 .contact-image-div > img {
   max-width: 100%;
   height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
+  opacity: 0.9;
 }
 
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
-  .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
+@media (max-width: 768px) {
+  .contact-div-main {
+    grid-template-columns: 1fr;
   }
 
-  .contact-title {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .contact-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
-
+  .contact-title,
+  .contact-subtitle,
   .contact-text-div {
     text-align: center;
-    margin-top: 1.5rem;
-  }
-
-  .contact-detail,
-  .contact-detail-email {
-    font-size: 20px;
   }
 
   .contact-image-div {

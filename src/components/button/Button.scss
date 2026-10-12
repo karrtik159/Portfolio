@@ -3,45 +3,77 @@
 .main-button {
   background-color: $buttonColor;
   border: solid 1px $buttonColor;
-  color: $textColorDark;
-  font-weight: 700;
+  color: $buttonText;
+  font-family: "Outfit", "IBM Plex Sans", sans-serif;
+  font-weight: 600;
   width: max-content;
   padding: 13px 22px;
-  margin-right: 50px;
-  text-transform: uppercase;
-  border-radius: 6px;
+  margin-right: 12px;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  border-radius: 0;
   text-align: center;
   text-decoration: none;
-  display: block;
-  margin-top: 20px;
-  font-size: 1rem;
+  display: inline-block;
+  margin-top: 0;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  white-space: nowrap;
   cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .main-button:hover {
-  background-color: $darkBoxShadow2;
+  background-color: transparent;
   color: $buttonColor;
-  transition: all 0.3s ease 0s;
-  transform: translateY(-3px);
 }
+
+.main-button:active {
+  transform: scale(0.98);
+}
+
+.dark-mode .main-button:hover {
+  color: $accentOnDark;
+  border-color: $accentOnDark;
+}
+
+.button-ghost .main-button {
+  background-color: transparent;
+  color: $buttonColor;
+}
+
+.button-ghost .main-button:hover {
+  background-color: $buttonColor;
+  color: $buttonText;
+}
+
+.dark-mode .button-ghost .main-button {
+  color: $accentOnDark;
+  border-color: $accentOnDark;
+}
+
+.dark-mode .button-ghost .main-button:hover {
+  background-color: $accentOnDark;
+  color: $darkBackground;
+}
+
 .project-button {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
 .project-button > .main-button {
   margin-right: 0 !important;
 }
-/* Media Query */
+
 @media (max-width: 768px) {
   .main-button {
-    font-size: 0.938rem;
+    font-size: 0.9rem;
     padding: 12px 18px;
-    margin-right: 0px;
-  }
-}
-@media (max-width: 320px) {
-  .main-button {
-    font-size: 0.75rem;
+    margin-right: 0;
   }
 }

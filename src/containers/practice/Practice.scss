@@ -1,0 +1,79 @@
+@import "../../_globalColor";
+
+.practice-section {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  padding: 4.5rem 0 1rem;
+}
+
+.practice-heading {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: $titleColor;
+}
+
+.dark-mode .practice-heading {
+  color: $textColorDark;
+}
+
+.practice-subtitle {
+  margin: 0.75rem 0 0;
+  max-width: 38rem;
+  color: $subTitle;
+  line-height: 1.5;
+}
+
+.dark-mode .practice-subtitle {
+  color: $inkMuted;
+}
+
+.practice-list {
+  margin-top: 1.5rem;
+}
+
+.practice-row {
+  display: grid;
+  grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
+  gap: 1.5rem 2.5rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid $lightBorder1;
+}
+
+.practice-row h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: $titleColor;
+}
+
+.dark-mode .practice-row h2 {
+  color: $textColorDark;
+}
+
+.practice-row p {
+  margin: 0;
+  max-width: 62ch;
+  color: $cardSubtitle;
+  line-height: 1.55;
+}
+
+.dark-mode .practice-row p {
+  color: $inkMuted;
+}
+
+@media (max-width: 768px) {
+  .practice-section {
+    width: 100%;
+    padding: 3rem 1rem 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .practice-row {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    padding: 1.25rem 0;
+  }
+}
