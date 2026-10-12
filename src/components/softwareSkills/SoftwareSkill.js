@@ -14,7 +14,8 @@ import {
   FaProjectDiagram,
   FaChartLine,
   FaRobot,
-  FaShareAlt
+  FaShareAlt,
+  FaMicrophone
 } from "react-icons/fa";
 
 const iconMap = {
@@ -23,6 +24,7 @@ const iconMap = {
   tensorflow: SiTensorflow,
   huggingface: FaRobot,
   langchain: FaProjectDiagram,
+  crewai: FaRobot,
   fastapi: SiFastapi,
   docker: DiDocker,
   neo4j: FaShareAlt,
@@ -30,6 +32,7 @@ const iconMap = {
   mlflow: FaChartLine,
   opencv: SiOpencv,
   sql: DiDatabase,
+  livekit: FaMicrophone,
   default: FaBrain
 };
 

@@ -1,14 +1,53 @@
 @import "../_globalColor";
 
 .app-shell {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
-  background: $pageAtmosphereLight;
+  background:
+    radial-gradient(
+      1200px 520px at 12% -8%,
+      rgba(20, 122, 91, 0.09),
+      transparent 58%
+    ),
+    radial-gradient(
+      900px 480px at 92% 8%,
+      rgba(23, 33, 28, 0.05),
+      transparent 55%
+    ),
+    linear-gradient(180deg, #f5f7f6 0%, $pageAtmosphereLight 42%, #eef2f0 100%);
   color: $textColor;
   transition: background 0.2s ease;
 }
 
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
 .app-shell.dark-mode {
-  background: $pageAtmosphereDark;
+  background:
+    radial-gradient(
+      1100px 500px at 10% -10%,
+      rgba(20, 122, 91, 0.16),
+      transparent 55%
+    ),
+    radial-gradient(
+      800px 420px at 95% 0%,
+      rgba(213, 239, 228, 0.04),
+      transparent 50%
+    ),
+    linear-gradient(180deg, #121a17 0%, $pageAtmosphereDark 45%, #0e1412 100%);
+}
+
+.app-shell.dark-mode::before {
+  opacity: 0.045;
 }
 
 .dark-mode {
@@ -60,4 +99,38 @@
 
 .dark-mode .section-eyebrow {
   color: $accentTeal;
+}
+
+.cli-prompt {
+  margin: 0 0 0.55rem;
+  font-family: "IBM Plex Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: $buttonColor;
+  line-height: 1.2;
+}
+
+.dark-mode .cli-prompt {
+  color: $accentOnDark;
+}
+
+.cli-status {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 1.1rem;
+  padding: 0.45rem 0.75rem;
+  font-family: "IBM Plex Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: $cardSubtitle;
+  border: 1px solid $lightBorder1;
+  background: rgba(247, 248, 247, 0.7);
+}
+
+.dark-mode .cli-status {
+  color: $inkMuted;
+  border-color: rgba(213, 239, 228, 0.22);
+  background: rgba(16, 22, 20, 0.55);
 }

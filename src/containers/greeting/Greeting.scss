@@ -17,6 +17,11 @@
   width: 100%;
 }
 
+.greeting-cli {
+  margin-bottom: 0.65rem;
+  opacity: 0.85;
+}
+
 .greeting-brand {
   margin: 0;
   font-size: clamp(2.7rem, 5.4vw, 4.6rem);
@@ -45,11 +50,82 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin: 1.5rem 0 1rem;
+  margin: 1.5rem 0 0.65rem;
 }
 
 .button-greeting-div .main-button {
   margin: 0;
+}
+
+.greeting-resume-link {
+  display: inline-block;
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: $buttonColor;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.greeting-resume-link:hover {
+  color: $buttonHover;
+}
+
+.dark-mode .greeting-resume-link {
+  color: $accentOnDark;
+}
+
+.dark-mode .greeting-resume-link:hover {
+  color: $textColorDark;
+}
+
+.greeting-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  min-width: 0;
+}
+
+.system-stack {
+  margin: 0;
+  padding: 0.85rem 0 0.85rem 1.25rem;
+  border-left: 1px solid $lightBorder1;
+  /* Cool-paper oxide tokens — ink text, oxide strokes, soft section fills */
+  --svg-ink: #{$titleColor};
+  --svg-oxide: #{$buttonColor};
+  --svg-muted: #{$cardSubtitle};
+  --svg-surface: rgba(12, 92, 66, 0.08);
+  --svg-surface-2: rgba(12, 92, 66, 0.065);
+  --svg-surface-3: rgba(12, 92, 66, 0.05);
+  --svg-surface-4: rgba(12, 92, 66, 0.035);
+  --svg-fill: rgba(12, 92, 66, 0.07);
+  color: $titleColor;
+}
+
+.dark-mode .system-stack {
+  --svg-ink: #{$textColorDark};
+  --svg-oxide: #{$accentOnDark};
+  --svg-muted: #{$githubProfileCardLocationTS};
+  --svg-surface: rgba(213, 239, 228, 0.1);
+  --svg-surface-2: rgba(213, 239, 228, 0.08);
+  --svg-surface-3: rgba(213, 239, 228, 0.06);
+  --svg-surface-4: rgba(213, 239, 228, 0.045);
+  --svg-fill: rgba(213, 239, 228, 0.09);
+  color: $textColorDark;
+}
+
+.system-stack-graphic {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .system-stack-graphic {
+    animation: stack-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.1s;
+  }
 }
 
 .practice-poster {
@@ -89,11 +165,19 @@
   margin: 0 auto 1rem;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .snapshot-strip {
+    animation: hero-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.32s;
+  }
+}
+
 .snapshot-strip dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0;
   border-top: 1px solid $lightBorder1;
+  border-bottom: 1px solid $lightBorder1;
 }
 
 .snapshot-item {
@@ -123,12 +207,39 @@
   .greeting-text-div {
     animation: hero-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
+
+  .practice-poster a {
+    animation: hero-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .practice-poster a:nth-child(1) {
+    animation-delay: 0.28s;
+  }
+
+  .practice-poster a:nth-child(2) {
+    animation-delay: 0.36s;
+  }
+
+  .practice-poster a:nth-child(3) {
+    animation-delay: 0.44s;
+  }
 }
 
 @keyframes hero-rise {
   from {
     opacity: 0;
     transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes stack-rise {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
   }
   to {
     opacity: 1;
@@ -146,6 +257,21 @@
   .greeting-main {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+    align-items: start;
+  }
+
+  .greeting-aside {
+    gap: 0;
+  }
+
+  .system-stack {
+    padding: 0.65rem 0;
+    border-left: none;
+    max-width: 22rem;
+  }
+
+  .system-stack-graphic {
+    max-width: 100%;
   }
 
   .practice-poster {

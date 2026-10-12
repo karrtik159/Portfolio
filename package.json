@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://karrtik159.github.io/Portfolio",
   "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.3.0",
     "@fontsource/ibm-plex-sans": "^5.3.0",
     "@fontsource/outfit": "^5.3.0",
     "classnames": "^2.5.1",

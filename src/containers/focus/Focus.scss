@@ -1,0 +1,341 @@
+@import "../../_globalColor";
+
+.focus-section {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  padding: 4.5rem 0 1rem;
+}
+
+.focus-heading {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: $titleColor;
+}
+
+.dark-mode .focus-heading {
+  color: $textColorDark;
+}
+
+.focus-subtitle {
+  margin: 0.75rem 0 0;
+  max-width: 40rem;
+  color: $subTitle;
+  line-height: 1.5;
+}
+
+.dark-mode .focus-subtitle {
+  color: $inkMuted;
+}
+
+.focus-now {
+  margin: 1.25rem 0 0;
+  max-width: 44rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: $titleColor;
+}
+
+.dark-mode .focus-now {
+  color: $textColorDark;
+}
+
+.focus-now-label {
+  display: inline-block;
+  margin-right: 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $buttonColor;
+}
+
+.dark-mode .focus-now-label {
+  color: $accentOnDark;
+}
+
+.focus-rail {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+}
+
+.focus-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-right: 1rem;
+}
+
+.focus-track {
+  position: relative;
+  height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.focus-dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  background: $buttonColor;
+  z-index: 1;
+}
+
+.focus-node.past .focus-dot {
+  background: rgba(12, 92, 66, 0.45);
+}
+
+.focus-node.current .focus-dot {
+  background: $buttonColor;
+  outline: 2px solid rgba(12, 92, 66, 0.25);
+  outline-offset: 3px;
+}
+
+.dark-mode .focus-dot {
+  background: $accentOnDark;
+}
+
+.dark-mode .focus-node.past .focus-dot {
+  background: rgba(213, 239, 228, 0.4);
+}
+
+.dark-mode .focus-node.current .focus-dot {
+  outline-color: rgba(213, 239, 228, 0.3);
+}
+
+.focus-segment {
+  position: absolute;
+  left: 12px;
+  right: -1rem;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 92, 66, 0.55),
+    rgba(92, 107, 100, 0.2)
+  );
+}
+
+.dark-mode .focus-segment {
+  background: linear-gradient(
+    90deg,
+    rgba(213, 239, 228, 0.45),
+    rgba(148, 163, 184, 0.15)
+  );
+}
+
+.focus-era {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $buttonColor;
+}
+
+.dark-mode .focus-era {
+  color: $accentOnDark;
+}
+
+.focus-phase {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $subTitle;
+}
+
+.dark-mode .focus-phase {
+  color: $inkMuted;
+}
+
+.focus-title {
+  margin: 0.55rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: $titleColor;
+}
+
+.dark-mode .focus-title {
+  color: $textColorDark;
+}
+
+.focus-text {
+  margin: 0.45rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: $cardSubtitle;
+}
+
+.dark-mode .focus-text {
+  color: $inkMuted;
+}
+
+.focus-curiosity {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem 1.5rem;
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid $lightBorder1;
+}
+
+.focus-curiosity a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.focus-curiosity-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: $titleColor;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(12, 92, 66, 0.35);
+}
+
+.dark-mode .focus-curiosity-title {
+  color: $textColorDark;
+  text-decoration-color: rgba(213, 239, 228, 0.35);
+}
+
+.focus-curiosity a:hover .focus-curiosity-title {
+  color: $buttonColor;
+  text-decoration-color: $buttonColor;
+}
+
+.dark-mode .focus-curiosity a:hover .focus-curiosity-title {
+  color: $accentOnDark;
+  text-decoration-color: $accentOnDark;
+}
+
+.focus-curiosity-note {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: $subTitle;
+}
+
+.dark-mode .focus-curiosity-note {
+  color: $inkMuted;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .focus-now,
+  .focus-node {
+    animation: focus-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .focus-node:nth-child(1) {
+    animation-delay: 0.04s;
+  }
+  .focus-node:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+  .focus-node:nth-child(3) {
+    animation-delay: 0.12s;
+  }
+  .focus-node:nth-child(4) {
+    animation-delay: 0.16s;
+  }
+  .focus-node:nth-child(5) {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes focus-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .focus-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 2rem;
+  }
+
+  .focus-node:nth-child(3) .focus-segment,
+  .focus-node:nth-child(5) .focus-segment {
+    display: none;
+  }
+
+  .focus-curiosity {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .focus-section {
+    width: 100%;
+    padding: 3.5rem 1rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .focus-rail {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .focus-node {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 1rem;
+    padding: 0 0 1.75rem;
+  }
+
+  .focus-track {
+    height: 100%;
+    margin: 0;
+  }
+
+  .focus-dot {
+    top: 0.35rem;
+    transform: none;
+  }
+
+  .focus-segment {
+    left: 5px;
+    right: auto;
+    top: 1.1rem;
+    bottom: -0.15rem;
+    width: 2px;
+    height: auto;
+    transform: none;
+    background: linear-gradient(
+      180deg,
+      rgba(12, 92, 66, 0.55),
+      rgba(92, 107, 100, 0.2)
+    );
+  }
+
+  .dark-mode .focus-segment {
+    background: linear-gradient(
+      180deg,
+      rgba(213, 239, 228, 0.45),
+      rgba(148, 163, 184, 0.15)
+    );
+  }
+
+  .focus-node:last-child .focus-segment {
+    display: none;
+  }
+
+  .focus-curiosity {
+    grid-template-columns: 1fr;
+  }
+}

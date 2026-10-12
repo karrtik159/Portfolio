@@ -64,6 +64,115 @@
   color: $inkMuted;
 }
 
+.practice-arch {
+  position: relative;
+  margin-top: 0.5rem;
+  padding: 1.75rem 1.35rem 1.35rem;
+  border-top: 1px solid $lightBorder1;
+  --svg-ink: #{$titleColor};
+  --svg-oxide: #{$buttonColor};
+  --svg-muted: #{$cardSubtitle};
+  --svg-surface: rgba(12, 92, 66, 0.08);
+  --svg-surface-2: rgba(12, 92, 66, 0.12);
+  --svg-fill: rgba(12, 92, 66, 0.07);
+  color: $titleColor;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 122, 91, 0.07),
+      transparent 52%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(247, 248, 247, 0.85),
+      rgba(243, 245, 244, 0.2)
+    );
+}
+
+.dark-mode .practice-arch {
+  --svg-ink: #{$textColorDark};
+  --svg-oxide: #{$accentOnDark};
+  --svg-muted: #{$githubProfileCardLocationTS};
+  --svg-surface: rgba(213, 239, 228, 0.1);
+  --svg-surface-2: rgba(213, 239, 228, 0.14);
+  --svg-fill: rgba(213, 239, 228, 0.1);
+  color: $textColorDark;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 122, 91, 0.14),
+      transparent 52%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(24, 33, 28, 0.75),
+      rgba(16, 22, 20, 0.25)
+    );
+}
+
+.practice-arch-head {
+  margin: 0 0 1.1rem;
+}
+
+.practice-arch-title {
+  margin: 0;
+  font-family: "Outfit", "IBM Plex Sans", sans-serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: $titleColor;
+}
+
+.dark-mode .practice-arch-title {
+  color: $textColorDark;
+}
+
+.practice-arch-diagram {
+  width: 100%;
+  padding: 0.35rem 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.practice-arch-graphic {
+  display: block;
+  width: 100%;
+  max-width: 46rem;
+  min-height: 11rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .practice-arch-graphic {
+    animation: arch-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+.practice-arch-caption {
+  margin: 1.1rem 0 0;
+  max-width: 48rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: $subTitle;
+}
+
+.dark-mode .practice-arch-caption {
+  color: $inkMuted;
+}
+
+@keyframes arch-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (max-width: 768px) {
   .practice-section {
     width: 100%;
@@ -71,9 +180,18 @@
     box-sizing: border-box;
   }
 
+  .practice-arch {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
   .practice-row {
     grid-template-columns: 1fr;
     gap: 0.55rem;
     padding: 1.25rem 0;
+  }
+
+  .practice-arch-graphic {
+    min-width: 22rem;
   }
 }

@@ -15,17 +15,23 @@ const illustration = {
 const greeting = {
   username: "Karrtik Baheti",
   title: "Karrtik Baheti",
+  cliPrompt: "$ whoami",
   subTitle:
-    "I turn model concepts into production systems and curate the knowledge those systems use.",
+    "Senior AI/ML engineer shipping production RAG, agents, and the eval that keeps them grounded.",
   resumeLink:
     "https://drive.google.com/file/d/19VQ-2pt2qmtOSjJUUATaFny9GVZRp-V_/view?usp=sharing",
+  stackLayers: [
+    "Applications",
+    "AI Systems",
+    "Data and Knowledge",
+    "Infrastructure"
+  ],
+  // Flat stack diagram (CRA: require(...).default for <img>; Greeting inlines via ReactComponent)
+  stackSvg: require("./assets/images/ai-stack-layers.svg").default,
   snapshot: [
     {label: "Current", value: "Senior AI/ML Engineer, Kmphitech LLP"},
     {label: "Experience", value: "2+ years in production AI"},
-    {label: "Practice", value: "Applied engineer, concept implementation, AI curator"},
-    {label: "Focus", value: "Agentic, graph, and hybrid RAG"},
-    {label: "Education", value: "B.E. Computer Engineering (AI), 8.66 CGPA"},
-    {label: "Based in", value: "Surat, India"}
+    {label: "Based in", value: "Surat, India · open to opportunities"}
   ],
   displayGreeting: true
 };
@@ -39,6 +45,7 @@ const socialMediaLinks = {
 
 const practiceSection = {
   title: "Practice",
+  cliPrompt: "$ cat practice.md",
   subtitle: "Three kinds of work, on the same systems.",
   items: [
     {
@@ -54,34 +61,104 @@ const practiceSection = {
       text: "Decide what a system is allowed to know. That is model choice, source selection, prompt patterns, and which eval cases stay in the set. Mentoring on retrieval is the same job."
     }
   ],
+  flow: {
+    title: "How systems move",
+    // "workflow" | "pipeline" — Practice maps these to SVG ReactComponents
+    diagram: "workflow",
+    caption:
+      "Collect grounded sources, understand them, reason with RAG and agents, deliver into product — then improve from eval.",
+    workflowSvg: require("./assets/images/ai-workflow-loop.svg").default,
+    pipelineSvg: require("./assets/images/ai-pipeline-flow.svg").default
+  },
   display: true
 };
 
-const signalSection = {
-  title: "Signals",
+const howIWorkSection = {
+  title: "How I work",
+  cliPrompt: "$ cat principles",
+  subtitle: "Defaults I keep when shipping retrieval systems.",
+  principles: [
+    {
+      id: "01",
+      text: "Ground retrieval before you trust the answer. Sources and fusion configs beat prompt theater."
+    },
+    {
+      id: "02",
+      text: "Eval is a loop, not a launch checkbox. Quality, latency, and cost decide what ships."
+    },
+    {
+      id: "03",
+      text: "Curation is engineering. What a system is allowed to know is a design choice, not a dump."
+    },
+    {
+      id: "04",
+      text: "Prefer boring deploy paths. Notebooks become services with Docker, CI, and monitoring before demos do."
+    }
+  ],
+  display: true
+};
+
+const focusSection = {
+  title: "Focus",
   subtitle:
-    "Recent research I use to judge retrieval, evaluation, and agent cost.",
+    "One throughline: how the work learned to ship, retrieve, evaluate - and what I am digging into now.",
+  now: {
+    label: "Now",
+    text:
+      "Decision models in AI DevOps - typed judgments for CI, alerts, and agent guardrails, kept beside rules rather than above them."
+  },
   items: [
     {
-      date: "2 Oct 2026",
-      title: "Company knowledge still breaks retrieval",
-      text: "Kapa's Company Knowledge Bench scored plain hybrid search at 0.41. A reranker lifted that to 0.50. Their own agentic retriever reached 0.65 in about five seconds. Kapa built every retriever in the test. I still treat the retriever as a cost and quality choice.",
-      source: "Kapa",
+      era: "2019 - 2023",
+      phase: "Foundations",
+      title: "ML, deep learning, systems",
+      text: "Computer Engineering (AI). Neural Networks and TensorFlow specializations. Train first, then learn to ship.",
+      status: "past"
+    },
+    {
+      era: "2022 - 2024",
+      phase: "Vision & product",
+      title: "Perception into services",
+      text: "Emotion detection, virtual try-on, parking vision. Transformers, diffusion, FastAPI, Docker - notebooks became APIs.",
+      status: "past"
+    },
+    {
+      era: "2024",
+      phase: "Retrieval",
+      title: "Agents, graphs, grounding",
+      text: "Agentic, graph, and hybrid RAG on a production knowledge graph. Precision@k and recall@k drove the configs.",
+      status: "past"
+    },
+    {
+      era: "2024 - Present",
+      phase: "Evaluation",
+      title: "Quality, cost, curation",
+      text: "LLM eval for response quality, retrieval, latency, and cost. Mentoring on prompts, sources, and what stays in the set.",
+      status: "current"
+    },
+    {
+      era: "Exploring",
+      phase: "DevOps judgment",
+      title: "System One-style decisions",
+      text: "Where fast structured models help pipelines - and where deterministic policy must still own deploy and page.",
+      status: "current"
+    }
+  ],
+  curiosity: [
+    {
+      title: "System One + Jev",
+      note: "Typed decisions, not chat",
+      url: "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+    },
+    {
+      title: "Shadow before automate",
+      note: "Log judgment next to rules",
+      url: "https://jevlist.ai/knowledge/jev-devops-decisions"
+    },
+    {
+      title: "Retriever cost vs quality",
+      note: "Hybrid search still needs a pick",
       url: "https://www.kapa.ai/blog/company-knowledge-bench"
-    },
-    {
-      date: "10 Oct 2026",
-      title: "Golden eval sets go stale",
-      text: "A Two Set AI write-up quotes Ofer Mendelevitch on production RAG. He points to UMBRELA, reference-free retrieval scoring from Jimmy Lin's lab. When documents change every week, a fixed answer key cannot keep up.",
-      source: "Two Set AI",
-      url: "https://www.twosetai.com/insights/evaluate-rag-without-golden-answers/"
-    },
-    {
-      date: "8 Oct 2026",
-      title: "Agentic search is not cheap yet",
-      text: "Exa's ATLAS benchmark found no system under $1 that got half the rows right on wide research tasks. Their best reported run needed $8.92 and 18 minutes for 0.66 row F1. I scope agents to questions that justify that cost.",
-      source: "Exa",
-      url: "https://exa.ai/blog/atlas-benchmark"
     }
   ],
   display: true
@@ -89,66 +166,70 @@ const signalSection = {
 
 const skillsSection = {
   title: "Skills",
-  subTitle: "The tools I use to implement a concept and keep it in production.",
+  subTitle:
+    "Hiring-scan groups from the resume stack: GenAI, models, retrieval, and how it ships.",
   skillGroups: [
     {
-      name: "Applied systems",
+      name: "LLM / GenAI",
       items: [
         "LangChain",
         "CrewAI",
+        "Agentic / Graph / Hybrid RAG",
+        "Prompt engineering",
+        "LiveKit",
+        "Mem0",
+        "RAGAS",
+        "LangSmith"
+      ]
+    },
+    {
+      name: "Models & CV",
+      items: [
+        "PyTorch",
+        "TensorFlow",
+        "Hugging Face Transformers",
+        "OpenCV",
+        "scikit-learn",
+        "Diffusion models",
+        "Zero-shot / few-shot"
+      ]
+    },
+    {
+      name: "Data & retrieval",
+      items: [
+        "Neo4j",
+        "pgvector",
+        "Knowledge graphs",
+        "Reciprocal rank fusion",
+        "Precision@k / Recall@k",
+        "MySQL",
+        "MongoDB",
+        "Feature engineering"
+      ]
+    },
+    {
+      name: "Ship / MLOps",
+      items: [
+        "Python",
         "FastAPI",
         "Docker",
         "CI/CD",
         "Celery",
-        "Redis"
-      ]
-    },
-    {
-      name: "Retrieval",
-      items: [
-        "Agentic RAG",
-        "Graph RAG",
-        "Hybrid RAG",
-        "Vector databases",
-        "Knowledge graphs",
-        "Neo4j"
-      ]
-    },
-    {
-      name: "Evaluation and curation",
-      items: [
-        "RAGAS",
-        "Langfuse",
-        "Prompt engineering",
+        "Redis",
         "MLflow",
-        "Weights & Biases"
-      ]
-    },
-    {
-      name: "Models and languages",
-      items: [
-        "Python",
-        "PyTorch",
-        "TensorFlow",
-        "Hugging Face",
-        "OpenCV",
-        "SQL"
+        "Microservices"
       ]
     }
   ],
   softwareSkills: [
     {skillName: "Python", iconName: "python"},
     {skillName: "PyTorch", iconName: "pytorch"},
-    {skillName: "TensorFlow", iconName: "tensorflow"},
-    {skillName: "Hugging Face", iconName: "huggingface"},
     {skillName: "LangChain", iconName: "langchain"},
+    {skillName: "CrewAI", iconName: "crewai"},
     {skillName: "FastAPI", iconName: "fastapi"},
     {skillName: "Docker", iconName: "docker"},
     {skillName: "Neo4j", iconName: "neo4j"},
-    {skillName: "Redis", iconName: "redis"},
-    {skillName: "MLflow", iconName: "mlflow"},
-    {skillName: "OpenCV", iconName: "opencv"},
-    {skillName: "SQL", iconName: "sql"}
+    {skillName: "LiveKit", iconName: "livekit"}
   ],
   display: true
 };
@@ -190,10 +271,10 @@ const workExperiences = {
       date: "May 2024 - Present",
       desc: "Surat, India. Production LLM systems, agentic RAG, and MLOps.",
       descBullets: [
-        "Designed and delivered agentic, graph, and hybrid RAG pipelines on a production knowledge graph. Retrieval relevance improved 25% on precision@k and recall@k.",
-        "Built evaluation for response quality, retrieval accuracy, latency, and cost, then used those scores to choose models.",
-        "Curated prompts, graph sources, and review practice for junior engineers working on retrieval.",
-        "Productionized the components with Docker, CI/CD, scaling, and live monitoring."
+        "Delivered agentic, graph, and hybrid RAG on a production knowledge graph; retrieval relevance +25% on precision@k and recall@k.",
+        "Ran eval for response quality, retrieval accuracy, latency, and cost to choose models and configs.",
+        "Curated prompts, graph sources, and review practice for junior engineers on retrieval.",
+        "Productionized with Docker, CI/CD, scaling, and live monitoring."
       ]
     },
     {
@@ -204,9 +285,8 @@ const workExperiences = {
       desc: "Core ML products and the first production AI services.",
       descBullets: [
         "Built classification, extraction, and retrieval modules for the first generation of AI products.",
-        "Shipped a real-time computer vision system for parking-lot vehicle detection, with alerting dashboards.",
-        "Served models through FastAPI and Docker.",
-        "Used zero-shot and few-shot prompts so a task did not need a new training run each time."
+        "Shipped real-time parking-lot vehicle detection with alerting dashboards.",
+        "Served models through FastAPI and Docker; used zero-shot and few-shot prompts to skip retrains."
       ]
     },
     {
@@ -217,7 +297,7 @@ const workExperiences = {
       desc: "Remote. Virtual try-on and body measurement.",
       descBullets: [
         "Cut virtual try-on preprocessing time by 25%.",
-        "Built transformer models for body measurement and used diffusion models for visual realism."
+        "Built transformer models for body measurement; diffusion for visual realism."
       ]
     }
   ]
@@ -230,13 +310,31 @@ const openSource = {
 
 const bigProjects = {
   title: "Projects",
-  subtitle: "A production voice system, then an earlier vision study.",
+  subtitle: "One production system in focus, then an earlier vision study.",
   projects: [
     {
       image: require("./assets/images/contextflow.svg").default,
       projectName: "ContextFlow",
+      featured: true,
+      outcome:
+        "Open-source real-time voice AI with hybrid graph-vector RAG, agent crews, and eval in the loop.",
       projectDesc:
-        "Open-source real-time voice AI. Hybrid graph-vector RAG with Neo4j, pgvector, and reciprocal rank fusion, CrewAI agents, and Mem0 memory. Evaluated with RAGAS and LangSmith.",
+        "FastAPI + CrewAI + LiveKit. Neo4j and pgvector fused with reciprocal rank fusion; Mem0 for memory. Quality checked with RAGAS and LangSmith.",
+      tech: ["Hybrid Graph-Vector RAG", "Neo4j + pgvector + RRF", "CrewAI", "LiveKit"],
+      metrics: [
+        {
+          label: "Retrieval relevance",
+          value: "+25% precision@k / recall@k"
+        },
+        {
+          label: "Stack",
+          value: "Graph + vector + RRF"
+        },
+        {
+          label: "Eval loop",
+          value: "RAGAS · LangSmith"
+        }
+      ],
       footerLink: [
         {
           name: "GitHub",
@@ -247,8 +345,21 @@ const bigProjects = {
     {
       image: require("./assets/images/face-detection.webp"),
       projectName: "Emotion Detection",
+      outcome:
+        "Architecture comparison study for emotion recognition on a public affective dataset.",
       projectDesc:
-        "Compared VGG19 and AlexNet on the EMOTIC dataset for emotion detection. Early work in computer vision and affective computing.",
+        "Compared VGG19 and AlexNet on the EMOTIC dataset. Early work in computer vision and affective computing. No published accuracy claim beyond the comparison itself.",
+      tech: ["VGG19", "AlexNet", "EMOTIC", "Flask"],
+      metrics: [
+        {
+          label: "Architectures",
+          value: "VGG19 vs AlexNet"
+        },
+        {
+          label: "Dataset",
+          value: "EMOTIC"
+        }
+      ],
       footerLink: [
         {
           name: "GitHub",
@@ -302,8 +413,8 @@ const achievementSection = {
 const contactInfo = {
   title: "Contact",
   subtitle:
-    "Open to applied AI roles and work on retrieval, agents, and evaluation.",
-  number: "+91-98256-56802",
+    "Open to applied AI roles. Best reach is email for retrieval, agents, and evaluation work.",
+  statusLine: "status: systems online · eval loop ready",
   email_address: "karrtikbaheti159@gmail.com"
 };
 
@@ -320,7 +431,8 @@ export {
   socialMediaLinks,
   splashScreen,
   practiceSection,
-  signalSection,
+  howIWorkSection,
+  focusSection,
   skillsSection,
   educationInfo,
   techStack,

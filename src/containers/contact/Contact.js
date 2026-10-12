@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import {contactInfo} from "../../portfolio";
+import Button from "../../components/button/Button";
+import {contactInfo, socialMediaLinks} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -24,19 +25,30 @@ export default function Contact() {
             >
               {contactInfo.subtitle}
             </p>
+            {contactInfo.statusLine ? (
+              <p className="cli-status" role="status">
+                {contactInfo.statusLine}
+              </p>
+            ) : null}
+            <div className="contact-cta-row">
+              <Button
+                text="Email"
+                href={"mailto:" + contactInfo.email_address}
+              />
+              {socialMediaLinks.linkedin ? (
+                <Button
+                  text="LinkedIn"
+                  newTab
+                  href={socialMediaLinks.linkedin}
+                  className="button-ghost"
+                />
+              ) : null}
+            </div>
             <div
               className={
                 isDark ? "dark-mode contact-text-div" : "contact-text-div"
               }
             >
-              {contactInfo.number && (
-                <a
-                  className="contact-detail"
-                  href={"tel:" + contactInfo.number}
-                >
-                  {contactInfo.number}
-                </a>
-              )}
               <a
                 className="contact-detail-email"
                 href={"mailto:" + contactInfo.email_address}

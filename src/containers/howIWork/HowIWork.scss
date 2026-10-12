@@ -1,0 +1,130 @@
+@import "../../_globalColor";
+
+.how-i-work-section {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  padding: 3.5rem 0 1rem;
+}
+
+.how-i-work-heading {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: $titleColor;
+}
+
+.dark-mode .how-i-work-heading {
+  color: $textColorDark;
+}
+
+.how-i-work-subtitle {
+  margin: 0.75rem 0 0;
+  max-width: 40rem;
+  color: $subTitle;
+  line-height: 1.5;
+}
+
+.dark-mode .how-i-work-subtitle {
+  color: $inkMuted;
+}
+
+.principles-panel {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  border: 1px solid $lightBorder1;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 122, 91, 0.04),
+      transparent 42%
+    ),
+    rgba(247, 248, 247, 0.55);
+}
+
+.dark-mode .principles-panel {
+  border-color: rgba(213, 239, 228, 0.22);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 122, 91, 0.1),
+      transparent 42%
+    ),
+    rgba(16, 22, 20, 0.4);
+}
+
+.principle-row {
+  --principle-i: 0;
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem 1.25rem;
+  align-items: start;
+  padding: 1.15rem 1.25rem;
+  border-bottom: 1px solid $lightBorder1;
+}
+
+.principle-row:last-child {
+  border-bottom: none;
+}
+
+.dark-mode .principle-row {
+  border-bottom-color: rgba(213, 239, 228, 0.16);
+}
+
+.principle-id {
+  font-family: "IBM Plex Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: $buttonColor;
+  line-height: 1.45;
+  padding-top: 0.1rem;
+}
+
+.dark-mode .principle-id {
+  color: $accentOnDark;
+}
+
+.principle-text {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: $titleColor;
+}
+
+.dark-mode .principle-text {
+  color: $textColorDark;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .principle-row {
+    animation: principle-rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(0.04s + var(--principle-i) * 0.06s);
+  }
+}
+
+@keyframes principle-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-i-work-section {
+    width: 100%;
+    padding: 3rem 1rem 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .principle-row {
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 1rem 0.9rem;
+  }
+}

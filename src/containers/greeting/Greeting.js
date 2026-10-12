@@ -5,11 +5,14 @@ import Button from "../../components/button/Button";
 import classNames from "classnames";
 import {greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import {ReactComponent as AiStackLayers} from "../../assets/images/ai-stack-layers.svg";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
 
   if (!greeting.displayGreeting) return null;
+
+  const layers = greeting.stackLayers || [];
 
   return (
     <>
@@ -19,26 +22,53 @@ export default function Greeting() {
       >
         <div className="greeting-main">
           <div className="greeting-text-div">
+            {greeting.cliPrompt ? (
+              <p className="cli-prompt greeting-cli">{greeting.cliPrompt}</p>
+            ) : null}
             <h1 className="greeting-brand">{greeting.title}</h1>
             <p className="greeting-text-p">{greeting.subTitle}</p>
             <div className="button-greeting-div">
-              <Button text="Contact" href="#contact" />
-              {greeting.resumeLink && (
-                <Button
-                  text="Resume"
-                  newTab
-                  href={greeting.resumeLink}
-                  className="button-ghost"
-                />
-              )}
+              <Button text="Projects" href="#projects" />
+              <Button
+                text="Contact"
+                href="#contact"
+                className="button-ghost"
+              />
             </div>
+            {greeting.resumeLink ? (
+              <a
+                className="greeting-resume-link"
+                href={greeting.resumeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
+            ) : null}
             <SocialMedia />
           </div>
-          <nav className="practice-poster" aria-label="Practices">
-            <a href="#practice">Applied engineer</a>
-            <a href="#practice">Concept implementation</a>
-            <a href="#practice">AI curator</a>
-          </nav>
+          <aside className="greeting-aside">
+            <div
+              className="system-stack system-stack-svg"
+              role="img"
+              aria-label={
+                layers.length > 0
+                  ? `System layers: ${layers.join(", ")}`
+                  : "AI systems layered stack"
+              }
+            >
+              <AiStackLayers
+                className="system-stack-graphic"
+                aria-hidden="true"
+                focusable="false"
+              />
+            </div>
+            <nav className="practice-poster" aria-label="Practices">
+              <a href="#practice">Applied engineer</a>
+              <a href="#practice">Concept implementation</a>
+              <a href="#practice">AI curator</a>
+            </nav>
+          </aside>
         </div>
       </section>
       <section

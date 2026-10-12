@@ -7,7 +7,8 @@ import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
 const Practice = lazy(() => import("./practice/Practice"));
-const Signals = lazy(() => import("./signals/Signals"));
+const HowIWork = lazy(() => import("./howIWork/HowIWork"));
+const Focus = lazy(() => import("./focus/Focus"));
 const WorkExperience = lazy(() => import("./workExperience/WorkExperience"));
 const StartupProject = lazy(() => import("./StartupProjects/StartupProject"));
 const Skills = lazy(() => import("./skills/Skills"));
@@ -31,7 +32,8 @@ const Main = () => {
         <Greeting />
         <Suspense fallback={null}>
           <Practice />
-          <Signals />
+          <HowIWork />
+          <Focus />
           <WorkExperience />
           <StartupProject />
           <Skills />
