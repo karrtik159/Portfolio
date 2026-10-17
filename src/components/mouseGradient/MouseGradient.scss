@@ -1,0 +1,88 @@
+.mouse-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mouse-gradient.is-active {
+  opacity: 1;
+}
+
+.mouse-gradient__blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: translate3d(-120vw, -120vh, 0);
+  will-change: transform;
+}
+
+.mouse-gradient__blob--wake {
+  width: 920px;
+  height: 920px;
+  background: radial-gradient(
+    circle,
+    rgba(20, 122, 91, 0.16) 0%,
+    rgba(12, 92, 66, 0.07) 42%,
+    transparent 70%
+  );
+}
+
+.mouse-gradient__blob--mid {
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(
+    circle,
+    rgba(12, 92, 66, 0.2) 0%,
+    rgba(20, 122, 91, 0.08) 46%,
+    transparent 72%
+  );
+}
+
+.mouse-gradient__blob--lead {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(
+    circle,
+    rgba(20, 122, 91, 0.42) 0%,
+    rgba(12, 92, 66, 0.16) 38%,
+    transparent 70%
+  );
+}
+
+.dark-mode .mouse-gradient__blob--wake {
+  background: radial-gradient(
+    circle,
+    rgba(20, 122, 91, 0.34) 0%,
+    rgba(12, 92, 66, 0.12) 46%,
+    transparent 72%
+  );
+}
+
+.dark-mode .mouse-gradient__blob--mid {
+  background: radial-gradient(
+    circle,
+    rgba(213, 239, 228, 0.14) 0%,
+    rgba(20, 122, 91, 0.16) 42%,
+    transparent 70%
+  );
+}
+
+.dark-mode .mouse-gradient__blob--lead {
+  background: radial-gradient(
+    circle,
+    rgba(213, 239, 228, 0.28) 0%,
+    rgba(20, 122, 91, 0.18) 40%,
+    transparent 70%
+  );
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .mouse-gradient {
+    display: none;
+  }
+}

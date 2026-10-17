@@ -1,6 +1,7 @@
 import React, {Suspense, lazy} from "react";
 import classNames from "classnames";
 import Header from "../components/header/Header";
+import MouseGradient from "../components/mouseGradient/MouseGradient";
 import Greeting from "./greeting/Greeting";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
@@ -27,6 +28,7 @@ const Main = () => {
 
   return (
     <div className={classNames("app-shell", {"dark-mode": isDark})}>
+      <MouseGradient />
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         <Header />
         <Greeting />

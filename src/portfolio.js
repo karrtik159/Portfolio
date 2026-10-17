@@ -268,7 +268,7 @@ const workExperiences = {
       role: "Senior AI/ML Engineer",
       company: "Kmphitech LLP",
       companylogo: require("./assets/images/kmphitech.svg").default,
-      date: "May 2024 - Present",
+      date: "May 2025 - Present",
       desc: "Surat, India. Production LLM systems, agentic RAG, and MLOps.",
       descBullets: [
         "Delivered agentic, graph, and hybrid RAG on a production knowledge graph; retrieval relevance +25% on precision@k and recall@k.",
@@ -281,7 +281,7 @@ const workExperiences = {
       role: "AI/ML Engineer",
       company: "Kmphitech LLP",
       companylogo: require("./assets/images/kmphitech.svg").default,
-      date: "Promoted from",
+      date: "May 2024 - Present",
       desc: "Core ML products and the first production AI services.",
       descBullets: [
         "Built classification, extraction, and retrieval modules for the first generation of AI products.",
@@ -298,6 +298,17 @@ const workExperiences = {
       descBullets: [
         "Cut virtual try-on preprocessing time by 25%.",
         "Built transformer models for body measurement; diffusion for visual realism."
+      ]
+    },
+    {
+      role: "Freelancer AI/ML Engineer",
+      company: "Freelancer.com",
+      companylogo: require("./assets/images/freelancer.svg").default,
+      date: "Jan 2023 - Dec 2023",
+      desc: "Freelance AI/ML projects for clients worldwide.",
+      descBullets: [
+        "Delivered custom ML models, data pipelines, and AI features for client products.",
+        "Scoped requirements, shipped end-to-end solutions, and iterated from client feedback."
       ]
     }
   ]
