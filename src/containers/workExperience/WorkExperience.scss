@@ -59,6 +59,7 @@
   width: 14px;
   height: 14px;
   margin-top: 8px;
+  margin-left: 5px;
   border-radius: 0;
   background: $buttonColor;
   box-shadow: none;
@@ -81,6 +82,14 @@
   .experience-content {
     grid-template-columns: 1fr;
     gap: 0.5rem;
+  }
+
+  .experience-timeline::before {
+    background: rgba(12, 92, 66, 0.45);
+  }
+
+  .dark-mode .experience-timeline::before {
+    background: rgba(213, 239, 228, 0.4);
   }
 }
 
@@ -140,12 +149,17 @@
   color: $inkMuted;
 }
 
+.experience-main {
+  min-width: 0;
+}
+
 .experience-bullets {
   margin: 0;
-  padding-left: 1.1rem;
+  padding-left: 1.15rem;
   display: grid;
   gap: 0.55rem;
   color: $textColor;
+  list-style: disc;
 }
 
 .dark-mode .experience-bullets {
@@ -154,6 +168,159 @@
 
 .experience-bullets li {
   line-height: 1.5;
+  padding-left: 0.15rem;
+}
+
+.product-reader {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 12rem) minmax(0, 1fr);
+  gap: 0.35rem 1.5rem;
+  margin-top: 1.35rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid $lightBorder1;
+}
+
+.product-reader-label {
+  grid-column: 1 / -1;
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  color: $titleColor;
+}
+
+.dark-mode .product-reader-label {
+  color: $textColorDark;
+}
+
+.product-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-tab {
+  margin: 0;
+  padding: 0.45rem 0.6rem 0.45rem 0;
+  border: 0;
+  border-left: 2px solid transparent;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  font-weight: 600;
+  color: $subTitle;
+  cursor: pointer;
+}
+
+.product-tab:hover {
+  color: $titleColor;
+}
+
+.product-tab[aria-selected="true"] {
+  padding-left: 0.7rem;
+  border-left-color: $buttonColor;
+  color: $titleColor;
+}
+
+.product-tab:active {
+  transform: translateY(1px);
+}
+
+.dark-mode .product-tab {
+  color: $inkMuted;
+}
+
+.dark-mode .product-tab:hover,
+.dark-mode .product-tab[aria-selected="true"] {
+  color: $textColorDark;
+}
+
+.dark-mode .product-tab[aria-selected="true"] {
+  border-left-color: $accentOnDark;
+}
+
+.product-panel {
+  min-width: 0;
+  padding-top: 0.35rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-panel > div {
+    animation: product-rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-tab:active {
+    transform: none;
+  }
+}
+
+@keyframes product-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.experience-product-name {
+  margin: 0;
+  font-weight: 700;
+  color: $titleColor;
+}
+
+.dark-mode .experience-product-name {
+  color: $textColorDark;
+}
+
+.experience-product-link {
+  display: inline-block;
+  margin-top: 0.15rem;
+  color: $buttonColor;
+  font-size: 0.92rem;
+  text-underline-offset: 0.18em;
+}
+
+.experience-product-link.is-pending {
+  color: $subTitle;
+  text-decoration: none;
+}
+
+.dark-mode .experience-product-link {
+  color: $accentOnDark;
+}
+
+.dark-mode .experience-product-link.is-pending {
+  color: $inkMuted;
+}
+
+.experience-product-text {
+  margin: 0.25rem 0 0;
+  color: $cardSubtitle;
+  line-height: 1.45;
+}
+
+.dark-mode .experience-product-text {
+  color: $inkMuted;
+}
+
+.experience-product-points {
+  margin: 0.7rem 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.45rem;
+  color: $textColor;
+  list-style: disc;
+}
+
+.experience-product-points li {
+  line-height: 1.5;
+  padding-left: 0.15rem;
+}
+
+.dark-mode .experience-product-points {
+  color: #e2e8f0;
 }
 
 @media (max-width: 768px) {
@@ -163,5 +330,38 @@
 
   .experience-meta {
     flex-direction: column;
+  }
+
+  .experience-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .product-reader {
+    grid-template-columns: 1fr;
+  }
+
+  .product-tabs {
+    flex-direction: row;
+    gap: 0.25rem 0.75rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-tab {
+    flex: 0 0 auto;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+    padding: 0.45rem 0.15rem 0.55rem;
+  }
+
+  .product-tab[aria-selected="true"] {
+    padding-left: 0.15rem;
+    border-left-color: transparent;
+    border-bottom-color: $buttonColor;
+  }
+
+  .dark-mode .product-tab[aria-selected="true"] {
+    border-bottom-color: $accentOnDark;
   }
 }

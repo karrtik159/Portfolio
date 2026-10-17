@@ -3,7 +3,7 @@ import "./Greeting.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import classNames from "classnames";
-import {greeting} from "../../portfolio";
+import {greeting, practiceSection} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import {ReactComponent as AiStackLayers} from "../../assets/images/ai-stack-layers.svg";
 
@@ -22,11 +22,13 @@ export default function Greeting() {
       >
         <div className="greeting-main">
           <div className="greeting-text-div">
-            {greeting.cliPrompt ? (
-              <p className="cli-prompt greeting-cli">{greeting.cliPrompt}</p>
-            ) : null}
             <h1 className="greeting-brand">{greeting.title}</h1>
             <p className="greeting-text-p">{greeting.subTitle}</p>
+            {greeting.snapshot && greeting.snapshot.length > 0 ? (
+              <p className="snapshot-line">
+                {greeting.snapshot.map(row => row.value).join(". ")}
+              </p>
+            ) : null}
             <div className="button-greeting-div">
               <Button text="Projects" href="#projects" />
               <Button
@@ -64,25 +66,14 @@ export default function Greeting() {
               />
             </div>
             <nav className="practice-poster" aria-label="Practices">
-              <a href="#practice">Applied engineer</a>
-              <a href="#practice">Concept implementation</a>
-              <a href="#practice">AI curator</a>
+              {(practiceSection.items || []).map((item, i) => (
+                <a key={item.name} href={`#role-tab-${i}`}>
+                  {item.name}
+                </a>
+              ))}
             </nav>
           </aside>
         </div>
-      </section>
-      <section
-        className={classNames("snapshot-strip", {"dark-mode": isDark})}
-        aria-label="Resume snapshot"
-      >
-        <dl>
-          {greeting.snapshot.map(row => (
-            <div className="snapshot-item" key={row.label}>
-              <dt>{row.label}</dt>
-              <dd>{row.value}</dd>
-            </div>
-          ))}
-        </dl>
       </section>
     </>
   );

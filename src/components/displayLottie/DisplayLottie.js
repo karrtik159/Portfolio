@@ -1,20 +1,20 @@
-import React, {Component, Suspense} from "react";
-import Lottie from "react-lottie";
+import React, {Suspense} from "react";
+import Lottie from "lottie-react";
 import Loading from "../../containers/loading/Loading";
 
-export default class DisplayLottie extends Component {
-  render() {
-    const animationData = this.props.animationData;
-    const defaultOptions = {
-      loop: true,
-      autoplay: true,
-      animationData: animationData
-    };
-
-    return (
-      <Suspense fallback={<Loading />}>
-        <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
-      </Suspense>
-    );
+export default function DisplayLottie({animationData}) {
+  if (!animationData) {
+    return null;
   }
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <Lottie
+        animationData={animationData}
+        loop
+        autoplay
+        style={{width: "100%", height: "100%"}}
+      />
+    </Suspense>
+  );
 }

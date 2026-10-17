@@ -28,141 +28,181 @@
   color: $inkMuted;
 }
 
-.practice-list {
-  margin-top: 1.5rem;
-}
-
-.practice-row {
+.role-reader {
   display: grid;
   grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
-  gap: 1.5rem 2.5rem;
-  padding: 1.6rem 0;
+  gap: 1.5rem 2.75rem;
+  margin-top: 1.75rem;
+  align-items: start;
+}
+
+.role-tabs {
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid $lightBorder1;
 }
 
-.practice-row h2 {
+.role-tab {
   margin: 0;
-  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  padding: 0.95rem 0.75rem 0.95rem 0;
+  border: 0;
+  border-bottom: 1px solid $lightBorder1;
+  border-left: 2px solid transparent;
+  background: transparent;
+  text-align: left;
+  font-family: "Outfit", "IBM Plex Sans", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
   font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.2;
+  color: $subTitle;
+  cursor: pointer;
+}
+
+.role-tab:hover {
   color: $titleColor;
 }
 
-.dark-mode .practice-row h2 {
-  color: $textColorDark;
+.role-tab[aria-selected="true"] {
+  padding-left: 0.85rem;
+  border-left-color: $buttonColor;
+  color: $titleColor;
 }
 
-.practice-row p {
-  margin: 0;
-  max-width: 62ch;
-  color: $cardSubtitle;
-  line-height: 1.55;
+.role-tab:active {
+  transform: translateY(1px);
 }
 
-.dark-mode .practice-row p {
+.dark-mode .role-tab {
   color: $inkMuted;
 }
 
-.practice-arch {
-  position: relative;
-  margin-top: 0.5rem;
-  padding: 1.75rem 1.35rem 1.35rem;
-  border-top: 1px solid $lightBorder1;
-  --svg-ink: #{$titleColor};
-  --svg-oxide: #{$buttonColor};
-  --svg-muted: #{$cardSubtitle};
-  --svg-surface: rgba(12, 92, 66, 0.08);
-  --svg-surface-2: rgba(12, 92, 66, 0.12);
-  --svg-fill: rgba(12, 92, 66, 0.07);
-  color: $titleColor;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(20, 122, 91, 0.07),
-      transparent 52%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(247, 248, 247, 0.85),
-      rgba(243, 245, 244, 0.2)
-    );
-}
-
-.dark-mode .practice-arch {
-  --svg-ink: #{$textColorDark};
-  --svg-oxide: #{$accentOnDark};
-  --svg-muted: #{$githubProfileCardLocationTS};
-  --svg-surface: rgba(213, 239, 228, 0.1);
-  --svg-surface-2: rgba(213, 239, 228, 0.14);
-  --svg-fill: rgba(213, 239, 228, 0.1);
+.dark-mode .role-tab:hover,
+.dark-mode .role-tab[aria-selected="true"] {
   color: $textColorDark;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(20, 122, 91, 0.14),
-      transparent 52%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(24, 33, 28, 0.75),
-      rgba(16, 22, 20, 0.25)
-    );
 }
 
-.practice-arch-head {
-  margin: 0 0 1.1rem;
+.dark-mode .role-tab[aria-selected="true"] {
+  border-left-color: $accentOnDark;
 }
 
-.practice-arch-title {
+.role-panel p,
+.trace-panel p {
   margin: 0;
-  font-family: "Outfit", "IBM Plex Sans", sans-serif;
-  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  max-width: 62ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: $cardSubtitle;
+}
+
+.dark-mode .role-panel p,
+.dark-mode .trace-panel p {
+  color: $inkMuted;
+}
+
+.role-panel {
+  padding-top: 0.35rem;
+}
+
+.practice-trace {
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid $lightBorder1;
+}
+
+.practice-trace-title {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.2;
   color: $titleColor;
 }
 
-.dark-mode .practice-arch-title {
+.dark-mode .practice-trace-title {
   color: $textColorDark;
 }
 
-.practice-arch-diagram {
-  width: 100%;
-  padding: 0.35rem 0.15rem;
+.practice-trace-caption {
+  margin: 0.7rem 0 0;
+  max-width: 46rem;
+  color: $subTitle;
+  line-height: 1.5;
+}
+
+.dark-mode .practice-trace-caption {
+  color: $inkMuted;
+}
+
+.trace-steps {
+  display: flex;
+  margin-top: 1.5rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-.practice-arch-graphic {
-  display: block;
-  width: 100%;
-  max-width: 46rem;
-  min-height: 11rem;
-  height: auto;
-  margin: 0 auto;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .practice-arch-graphic {
-    animation: arch-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-}
-
-.practice-arch-caption {
-  margin: 1.1rem 0 0;
-  max-width: 48rem;
-  font-size: 0.92rem;
-  line-height: 1.45;
+.trace-step {
+  flex: 1 0 7.5rem;
+  margin: 0;
+  padding: 0.85rem 1rem 0.9rem 0;
+  border: 0;
+  border-top: 2px solid rgba(92, 107, 100, 0.35);
+  background: transparent;
+  text-align: left;
+  font-family: "Outfit", "IBM Plex Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: $subTitle;
+  cursor: pointer;
 }
 
-.dark-mode .practice-arch-caption {
+.trace-step:hover {
+  color: $titleColor;
+}
+
+.trace-step[aria-selected="true"] {
+  border-top-color: $buttonColor;
+  color: $titleColor;
+}
+
+.trace-step:active {
+  transform: translateY(1px);
+}
+
+.dark-mode .trace-step {
+  border-top-color: rgba(213, 239, 228, 0.22);
   color: $inkMuted;
 }
 
-@keyframes arch-rise {
+.dark-mode .trace-step:hover,
+.dark-mode .trace-step[aria-selected="true"] {
+  color: $textColorDark;
+}
+
+.dark-mode .trace-step[aria-selected="true"] {
+  border-top-color: $accentOnDark;
+}
+
+.trace-panel {
+  margin-top: 1.25rem;
+  min-height: 4.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .role-panel p,
+  .trace-panel p {
+    animation: practice-rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .role-tab:active,
+  .trace-step:active {
+    transform: none;
+  }
+}
+
+@keyframes practice-rise {
   from {
     opacity: 0;
     transform: translateY(8px);
@@ -180,18 +220,12 @@
     box-sizing: border-box;
   }
 
-  .practice-arch {
-    padding-left: 0.85rem;
-    padding-right: 0.85rem;
-  }
-
-  .practice-row {
+  .role-reader {
     grid-template-columns: 1fr;
-    gap: 0.55rem;
-    padding: 1.25rem 0;
+    gap: 1.25rem;
   }
 
-  .practice-arch-graphic {
-    min-width: 22rem;
+  .trace-step {
+    flex-basis: 8.5rem;
   }
 }

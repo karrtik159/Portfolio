@@ -33,11 +33,11 @@ const Main = () => {
         <Header />
         <Greeting />
         <Suspense fallback={null}>
-          <Practice />
-          <HowIWork />
           <Focus />
-          <WorkExperience />
+          <Practice />
           <StartupProject />
+          <WorkExperience />
+          <HowIWork />
           <Skills />
           <div className="foundation-grid">
             <Education />

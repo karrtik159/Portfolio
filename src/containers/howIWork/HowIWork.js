@@ -15,9 +15,6 @@ export default function HowIWork() {
       id="principles"
       aria-labelledby="how-i-work-heading"
     >
-      {howIWorkSection.cliPrompt ? (
-        <p className="cli-prompt">{howIWorkSection.cliPrompt}</p>
-      ) : null}
       <h1 id="how-i-work-heading" className="section-title how-i-work-heading">
         {howIWorkSection.title}
       </h1>

@@ -3,11 +3,20 @@ import "./Focus.scss";
 import {focusSection} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import classNames from "classnames";
+import {useSelection} from "../../hooks/useSelection";
 
 export default function Focus() {
   const {isDark} = useContext(StyleContext);
+  const items = focusSection.items || [];
+  const initial = items.reduce(
+    (found, item, i) => (item.status === "current" ? i : found),
+    0
+  );
+  const {index, select, onKeyDown, tabsRef} = useSelection(items.length, initial);
 
   if (!focusSection.display) return null;
+
+  const active = items[index];
 
   return (
     <section
@@ -25,27 +34,48 @@ export default function Focus() {
           {focusSection.now.text}
         </p>
       )}
-      <ol className="focus-rail">
-        {focusSection.items.map((item, index) => (
-          <li
-            key={`${item.phase}-${item.era}`}
-            className={classNames("focus-node", item.status)}
+      <div className="focus-reader">
+        <div
+          className="focus-tabs"
+          role="tablist"
+          aria-label="Career arc"
+          aria-orientation="horizontal"
+          onKeyDown={onKeyDown}
+        >
+          {items.map((item, i) => (
+            <button
+              key={`${item.phase}-${item.era}`}
+              ref={node => {
+                tabsRef.current[i] = node;
+              }}
+              id={`focus-tab-${i}`}
+              className={classNames("focus-tab", item.status)}
+              type="button"
+              role="tab"
+              aria-selected={i === index}
+              aria-controls="focus-panel"
+              tabIndex={i === index ? 0 : -1}
+              onClick={() => select(i)}
+            >
+              <span className="focus-tab-era">{item.era}</span>
+              <span className="focus-tab-phase">{item.phase}</span>
+            </button>
+          ))}
+        </div>
+        {active ? (
+          <div
+            className="focus-chapter"
+            role="tabpanel"
+            id="focus-panel"
+            aria-labelledby={`focus-tab-${index}`}
           >
-            <div className="focus-track" aria-hidden="true">
-              <span className="focus-dot" />
-              {index < focusSection.items.length - 1 && (
-                <span className="focus-segment" />
-              )}
+            <div key={`${active.phase}-${active.era}`} className="focus-chapter-body">
+              <h2 className="focus-title">{active.title}</h2>
+              <p className="focus-text">{active.text}</p>
             </div>
-            <div className="focus-body">
-              <p className="focus-era">{item.era}</p>
-              <p className="focus-phase">{item.phase}</p>
-              <h2 className="focus-title">{item.title}</h2>
-              <p className="focus-text">{item.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+          </div>
+        ) : null}
+      </div>
       {focusSection.curiosity?.length > 0 && (
         <ul className="focus-curiosity">
           {focusSection.curiosity.map(item => (

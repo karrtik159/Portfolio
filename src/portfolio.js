@@ -17,7 +17,7 @@ const greeting = {
   title: "Karrtik Baheti",
   cliPrompt: "$ whoami",
   subTitle:
-    "Senior AI/ML engineer shipping production RAG, agents, and the eval that keeps them grounded.",
+    "AI/ML engineer shipping production RAG, agents, and the eval that keeps them grounded.",
   resumeLink:
     "https://drive.google.com/file/d/19VQ-2pt2qmtOSjJUUATaFny9GVZRp-V_/view?usp=sharing",
   stackLayers: [
@@ -29,7 +29,7 @@ const greeting = {
   // Flat stack diagram (CRA: require(...).default for <img>; Greeting inlines via ReactComponent)
   stackSvg: require("./assets/images/ai-stack-layers.svg").default,
   snapshot: [
-    {label: "Current", value: "Senior AI/ML Engineer, Kmphitech LLP"},
+    {label: "Current", value: "AI/ML Engineer, Kmphitech LLP"},
     {label: "Experience", value: "2+ years in production AI"},
     {label: "Based in", value: "Surat, India · open to opportunities"}
   ],
@@ -63,10 +63,32 @@ const practiceSection = {
   ],
   flow: {
     title: "How systems move",
-    // "workflow" | "pipeline" — Practice maps these to SVG ReactComponents
+    // "workflow" | "pipeline" - Practice maps these to SVG ReactComponents
     diagram: "workflow",
     caption:
-      "Collect grounded sources, understand them, reason with RAG and agents, deliver into product — then improve from eval.",
+      "Collect grounded sources, understand them, reason with RAG and agents, deliver into product, then improve from eval.",
+    steps: [
+      {
+        name: "Collect",
+        text: "Start with the records the product is allowed to search: graph nodes, documents, and the fields that belong in the set."
+      },
+      {
+        name: "Understand",
+        text: "Choose the model, the sources, and the prompt pattern. What the system is allowed to know is a design choice."
+      },
+      {
+        name: "Reason",
+        text: "Hybrid graph-vector retrieval, agent crews, and memory. Fusion configs do more than another prompt pass."
+      },
+      {
+        name: "Deliver",
+        text: "The loop has to land in a service. FastAPI, Docker, CI, and monitoring come before the demo does."
+      },
+      {
+        name: "Improve",
+        text: "Quality, latency, and cost decide the next config. The loop returns to the sources, not to a launch checkbox."
+      }
+    ],
     workflowSvg: require("./assets/images/ai-workflow-loop.svg").default,
     pipelineSvg: require("./assets/images/ai-pipeline-flow.svg").default
   },
@@ -265,16 +287,80 @@ const workExperiences = {
   display: true,
   experience: [
     {
-      role: "Senior AI/ML Engineer",
+      role: "AI/ML Engineer",
       company: "Kmphitech LLP",
       companylogo: require("./assets/images/kmphitech.svg").default,
       date: "May 2025 - Present",
-      desc: "Surat, India. Production LLM systems, agentic RAG, and MLOps.",
+      desc: "Surat, India. Production LLM systems and the client products shipped at Kmphitech.",
       descBullets: [
         "Delivered agentic, graph, and hybrid RAG on a production knowledge graph; retrieval relevance +25% on precision@k and recall@k.",
         "Ran eval for response quality, retrieval accuracy, latency, and cost to choose models and configs.",
         "Curated prompts, graph sources, and review practice for junior engineers on retrieval.",
         "Productionized with Docker, CI/CD, scaling, and live monitoring."
+      ],
+      products: [
+        {
+          name: "ReferU.AI",
+          domain: "referu.ai",
+          url: "https://www.referu.ai/",
+          text:
+            "Agentic retrieval over court records, planned so every incoming field could be measured.",
+          points: [
+            "Mapped the lifecycle before the build. Records from Unicourt and the other court APIs had to land as data that could be counted.",
+            "A person describes a legal matter and reaches attorneys with similar case experience.",
+            "Metrics sat on what arrived, what matched, and what the answer used, so a later change had a number."
+          ]
+        },
+        {
+          name: "Runsheet.AI",
+          domain: "",
+          url: "",
+          text:
+            "FastAPI document workspace with an agentic RAG chatbot and chart summaries of uploaded files."
+        },
+        {
+          name: "VolleyConnect",
+          domain: "seay-group.com/our-apps",
+          url: "https://seay-group.com/our-apps",
+          text:
+            "Web admin plus iOS and Android for a US volleyball platform where athletes, parents, and coaches find clubs, tryouts, camps, and clinics."
+        },
+        {
+          name: "TASK!",
+          domain: "taskapp.pro",
+          url: "https://www.taskapp.pro/",
+          text:
+            "First production service: a marketplace, and the deploy habits the later AI work stands on.",
+          points: [
+            "The brief was to learn how a service stays up — APIs, cron, the database, and a deploy someone else could restart.",
+            "People post local work, review who applied, and pay through Stripe at a flat $2 fee.",
+            "No model in this one. Shipping it is why the later RAG services had a place to land."
+          ]
+        },
+        {
+          name: "Dog Coloring Books",
+          domain: "dogcoloringbooks.com",
+          url: "https://dogcoloringbooks.com/",
+          text:
+            "A generator for people who want a coloring book of their own dog.",
+          points: [
+            "Tried separate proofs until one flow held: a dog in, outline pages out.",
+            "Prompt patterns made that default hold across breeds, with the prompts kept in one place so a change was deliberate.",
+            "Owned the client conversation so the flow matched what they needed to print and sell.",
+            "Traced pages, retries, and failures on each run — 100 Gemini outlines, then Stripe and Lulu for print."
+          ]
+        },
+        {
+          name: "UBUN.ONE",
+          domain: "ubun.one",
+          url: "https://ubun.one/",
+          text: "Private conversation space, taken over mid-build and closed.",
+          points: [
+            "Kept the vision already set: email access, a mode that saves, and a mode that stores nothing after the session.",
+            "Worked through the escalations and the mismatches in the design, and simplified the RAG agent so it could actually be changed.",
+            "Delivered it. The close was a working agent, not another handoff."
+          ]
+        }
       ]
     },
     {
