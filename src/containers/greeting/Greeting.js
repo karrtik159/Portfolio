@@ -22,6 +22,9 @@ export default function Greeting() {
       >
         <div className="greeting-main">
           <div className="greeting-text-div">
+            {greeting.cliPrompt ? (
+              <p className="cli-prompt greeting-cli">{greeting.cliPrompt}</p>
+            ) : null}
             <h1 className="greeting-brand">{greeting.title}</h1>
             <p className="greeting-text-p">{greeting.subTitle}</p>
             {greeting.snapshot && greeting.snapshot.length > 0 ? (

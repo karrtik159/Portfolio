@@ -34,6 +34,9 @@ export default function Practice() {
       className={classNames("practice-section", {"dark-mode": isDark})}
       id="practice"
     >
+      {practiceSection.cliPrompt ? (
+        <p className="cli-prompt">{practiceSection.cliPrompt}</p>
+      ) : null}
       <h1 className="section-title practice-heading">{practiceSection.title}</h1>
       <p className="practice-subtitle">{practiceSection.subtitle}</p>
       <div className="role-reader">

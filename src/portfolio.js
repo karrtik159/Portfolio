@@ -42,7 +42,7 @@ const greeting = {
   stackSvg: stackSvg,
   snapshot: [
     {label: "Current", value: "AI/ML Engineer, Kmphitech LLP"},
-    {label: "Experience", value: "2+ years in production AI"},
+    {label: "Experience", value: "3+ years in production AI"},
     {label: "Based in", value: "Surat, India · open to opportunities"}
   ],
   displayGreeting: true
