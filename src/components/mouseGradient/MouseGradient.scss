@@ -1,7 +1,10 @@
 .mouse-gradient {
   position: fixed;
-  inset: 0;
-  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
@@ -81,8 +84,8 @@
   );
 }
 
-@media (hover: none), (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   .mouse-gradient {
-    display: none;
+    transition: none;
   }
 }

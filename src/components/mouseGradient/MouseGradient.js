@@ -15,6 +15,7 @@ function MouseGradient() {
     if (!root) return undefined;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const canUsePointer = typeof window.PointerEvent === "function";
 
     const nodes = LAYERS.map(layer =>
       root.querySelector(`[data-layer="${layer.key}"]`)
@@ -30,6 +31,20 @@ function MouseGradient() {
     let targetY = state[0].y;
     let frame = 0;
     let seenPointer = false;
+
+    /* Snap all blobs directly to a position (no spring physics). */
+    const snapTo = (x, y) => {
+      state.forEach(point => {
+        point.x = x;
+        point.y = y;
+        point.vx = 0;
+        point.vy = 0;
+      });
+      nodes.forEach(node => {
+        if (!node) return;
+        node.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      });
+    };
 
     const paint = () => {
       let energy = 0;
@@ -72,22 +87,24 @@ function MouseGradient() {
     };
 
     const onMove = event => {
-      if (event.pointerType === "touch" || reduceMotion.matches) return;
+      const pointerType = event.pointerType;
+      if (pointerType === "touch") return;
+
       targetX = event.clientX;
       targetY = event.clientY;
 
       if (!seenPointer) {
         seenPointer = true;
-        state.forEach(point => {
-          point.x = targetX;
-          point.y = targetY;
-          point.vx = 0;
-          point.vy = 0;
-        });
+        snapTo(targetX, targetY);
         root.classList.add("is-active");
       }
 
-      kick();
+      if (reduceMotion.matches) {
+        /* Reduced motion: snap instantly, no spring animation. */
+        snapTo(targetX, targetY);
+      } else {
+        kick();
+      }
     };
 
     const onLeave = event => {
@@ -104,21 +121,44 @@ function MouseGradient() {
     };
 
     const onReduce = () => {
-      if (reduceMotion.matches) halt();
+      if (reduceMotion.matches) {
+        /* Stop the spring animation loop; the gradient stays visible
+           and future moves will snap instead. */
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
+        snapTo(targetX, targetY);
+      }
     };
 
-    window.addEventListener("pointermove", onMove, {passive: true});
-    document.documentElement.addEventListener("pointerleave", onLeave);
+    const moveOptions = {passive: true};
+    const leaveTarget = document.documentElement;
+    if (canUsePointer) {
+      window.addEventListener("pointermove", onMove, moveOptions);
+      leaveTarget.addEventListener("pointerleave", onLeave);
+    } else {
+      window.addEventListener("mousemove", onMove, moveOptions);
+      leaveTarget.addEventListener("mouseleave", onLeave);
+    }
+
     if (reduceMotion.addEventListener) {
       reduceMotion.addEventListener("change", onReduce);
+    } else if (reduceMotion.addListener) {
+      reduceMotion.addListener(onReduce);
     }
 
     return () => {
       halt();
-      window.removeEventListener("pointermove", onMove);
-      document.documentElement.removeEventListener("pointerleave", onLeave);
+      if (canUsePointer) {
+        window.removeEventListener("pointermove", onMove);
+        leaveTarget.removeEventListener("pointerleave", onLeave);
+      } else {
+        window.removeEventListener("mousemove", onMove);
+        leaveTarget.removeEventListener("mouseleave", onLeave);
+      }
       if (reduceMotion.removeEventListener) {
         reduceMotion.removeEventListener("change", onReduce);
+      } else if (reduceMotion.removeListener) {
+        reduceMotion.removeListener(onReduce);
       }
     };
   }, []);
