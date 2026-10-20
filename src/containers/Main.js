@@ -5,6 +5,7 @@ import MouseGradient from "../components/mouseGradient/MouseGradient";
 import Greeting from "./greeting/Greeting";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
+import {useSectionScroll} from "../hooks/useSectionScroll";
 import "./Main.scss";
 
 const Practice = lazy(() => import("./practice/Practice"));
@@ -19,6 +20,7 @@ const Profile = lazy(() => import("./profile/Profile"));
 const ScrollToTopButton = lazy(() => import("./topbutton/Top"));
 
 const Main = () => {
+  useSectionScroll();
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
 

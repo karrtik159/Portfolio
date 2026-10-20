@@ -8,6 +8,20 @@ body {
   scroll-behavior: smooth;
 }
 
+#greeting,
+#focus,
+#practice,
+#projects,
+#experience,
+#principles,
+#skills,
+#education,
+#achievements,
+#contact,
+.foundation-grid {
+  scroll-margin-top: 5.5rem;
+}
+
 body {
   margin: 0;
   font-family: "IBM Plex Sans", sans-serif;
