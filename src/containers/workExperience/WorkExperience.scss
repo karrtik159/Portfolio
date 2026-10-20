@@ -305,6 +305,31 @@
   color: $inkMuted;
 }
 
+.product-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-skill-badge {
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $buttonColor;
+  border: 1px solid rgba(12, 92, 66, 0.35);
+  background: transparent;
+  border-radius: 0;
+}
+
+.dark-mode .product-skill-badge {
+  color: $accentOnDark;
+  border-color: rgba(213, 239, 228, 0.35);
+}
+
 .experience-product-points {
   margin: 0.7rem 0 0;
   padding-left: 1.15rem;

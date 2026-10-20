@@ -1,6 +1,18 @@
 /* Change this file to get your personal Portfolio */
 
 // To change portfolio colors globally go to the  _globalColor.scss file
+import stackSvg from "./assets/images/ai-stack-layers.svg";
+import workflowSvg from "./assets/images/ai-workflow-loop.svg";
+import pipelineSvg from "./assets/images/ai-pipeline-flow.svg";
+import logo2020 from "./assets/images/logo_2020.webp";
+import kmphitechLogo from "./assets/images/kmphitech.svg";
+import auktureLogo from "./assets/images/aukture.webp";
+import freelancerLogo from "./assets/images/freelancer.svg";
+import contextflowImg from "./assets/images/contextflow.svg";
+import faceDetectionImg from "./assets/images/face-detection.webp";
+import courseraNnImg from "./assets/images/coursera-nn.webp";
+import certificate1Img from "./assets/images/certificate-1.webp";
+import ssipHackathonImg from "./assets/images/ssip-hackathon.svg";
 
 const splashScreen = {
   enabled: false,
@@ -26,8 +38,8 @@ const greeting = {
     "Data and Knowledge",
     "Infrastructure"
   ],
-  // Flat stack diagram (CRA: require(...).default for <img>; Greeting inlines via ReactComponent)
-  stackSvg: require("./assets/images/ai-stack-layers.svg").default,
+  // Flat stack diagram
+  stackSvg: stackSvg,
   snapshot: [
     {label: "Current", value: "AI/ML Engineer, Kmphitech LLP"},
     {label: "Experience", value: "2+ years in production AI"},
@@ -89,8 +101,8 @@ const practiceSection = {
         text: "Quality, latency, and cost decide the next config. The loop returns to the sources, not to a launch checkbox."
       }
     ],
-    workflowSvg: require("./assets/images/ai-workflow-loop.svg").default,
-    pipelineSvg: require("./assets/images/ai-pipeline-flow.svg").default
+    workflowSvg: workflowSvg,
+    pipelineSvg: pipelineSvg
   },
   display: true
 };
@@ -261,7 +273,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "U.V. Patel College of Engineering, Ganpat University",
-      logo: require("./assets/images/logo_2020.webp"),
+      logo: logo2020,
       subHeader: "Bachelor of Computer Engineering (Artificial Intelligence)",
       duration: "June 2019 - May 2023",
       desc: "CGPA: 8.66 / 10",
@@ -283,32 +295,55 @@ const techStack = {
   displayCodersrank: false
 };
 
+
 const workExperiences = {
   display: true,
+
   experience: [
     {
       role: "AI/ML Engineer",
       company: "Kmphitech LLP",
-      companylogo: require("./assets/images/kmphitech.svg").default,
-      date: "May 2025 - Present",
-      desc: "Surat, India. Production LLM systems and the client products shipped at Kmphitech.",
+      companylogo: kmphitechLogo,
+      date: "May 2024 - Present",
+      location: "Surat, India",
+
+      desc:
+        "Building and deploying production AI systems, computer vision models, and scalable backend services.",
+
       descBullets: [
-        "Delivered agentic, graph, and hybrid RAG on a production knowledge graph; retrieval relevance +25% on precision@k and recall@k.",
-        "Ran eval for response quality, retrieval accuracy, latency, and cost to choose models and configs.",
-        "Curated prompts, graph sources, and review practice for junior engineers on retrieval.",
-        "Productionized with Docker, CI/CD, scaling, and live monitoring."
+        "Architected and deployed retrieval and conversational AI systems powering multiple client-facing applications.",
+        "Built real-time vehicle detection and computer vision pipelines with low-latency streaming inference.",
+        "Designed asynchronous task workflows using FastAPI, Redis, and Celery for background processing jobs.",
+        "Containerized production microservices with Docker, automated CI/CD pipelines, and health monitoring."
       ],
+
+      skills: [
+        "Python",
+        "FastAPI",
+        "PyTorch",
+        "OpenCV",
+        "LangChain",
+        "Docker",
+        "PostgreSQL",
+        "Redis",
+        "Celery",
+        "CI/CD"
+      ],
+
       products: [
         {
           name: "ReferU.AI",
           domain: "referu.ai",
           url: "https://www.referu.ai/",
           text:
-            "Agentic retrieval over court records, planned so every incoming field could be measured.",
-          points: [
-            "Mapped the lifecycle before the build. Records from Unicourt and the other court APIs had to land as data that could be counted.",
-            "A person describes a legal matter and reaches attorneys with similar case experience.",
-            "Metrics sat on what arrived, what matched, and what the answer used, so a later change had a number."
+            "Legal discovery platform designed to connect people with attorneys whose experience aligns with their legal matters.",
+          skills: [
+            "Python",
+            "FastAPI",
+            "LangChain",
+            "PostgreSQL",
+            "REST APIs",
+            "Docker"
           ]
         },
         {
@@ -316,25 +351,45 @@ const workExperiences = {
           domain: "",
           url: "",
           text:
-            "FastAPI document workspace with an agentic RAG chatbot and chart summaries of uploaded files."
+            "Document intelligence workspace combining conversational retrieval and chart-based summaries of uploaded files.",
+          skills: [
+            "Python",
+            "FastAPI",
+            "LangChain",
+            "Document AI",
+            "Data Visualization",
+            "Docker"
+          ]
         },
         {
           name: "VolleyConnect",
           domain: "seay-group.com/our-apps",
           url: "https://seay-group.com/our-apps",
           text:
-            "Web admin plus iOS and Android for a US volleyball platform where athletes, parents, and coaches find clubs, tryouts, camps, and clinics."
+            "Sports platform with web administration and mobile apps for volleyball clubs, tryouts, camps, and clinics.",
+          skills: [
+            "Python",
+            "FastAPI",
+            "React",
+            "REST APIs",
+            "PostgreSQL",
+            "Docker"
+          ]
         },
         {
           name: "TASK!",
           domain: "taskapp.pro",
           url: "https://www.taskapp.pro/",
           text:
-            "First production service: a marketplace, and the deploy habits the later AI work stands on.",
-          points: [
-            "The brief was to learn how a service stays up — APIs, cron, the database, and a deploy someone else could restart.",
-            "People post local work, review who applied, and pay through Stripe at a flat $2 fee.",
-            "No model in this one. Shipping it is why the later RAG services had a place to land."
+            "On-demand local task marketplace connecting users with local workers, featuring Stripe payment processing and background job queues.",
+          skills: [
+            "Python",
+            "FastAPI",
+            "Stripe",
+            "PostgreSQL",
+            "Redis",
+            "Celery",
+            "Docker"
           ]
         },
         {
@@ -342,59 +397,126 @@ const workExperiences = {
           domain: "dogcoloringbooks.com",
           url: "https://dogcoloringbooks.com/",
           text:
-            "A generator for people who want a coloring book of their own dog.",
-          points: [
-            "Tried separate proofs until one flow held: a dog in, outline pages out.",
-            "Prompt patterns made that default hold across breeds, with the prompts kept in one place so a change was deliberate.",
-            "Owned the client conversation so the flow matched what they needed to print and sell.",
-            "Traced pages, retries, and failures on each run — 100 Gemini outlines, then Stripe and Lulu for print."
+            "E-commerce generative AI service that transforms dog photos into printable coloring book pages with print-on-demand fulfillment.",
+          skills: [
+            "Python",
+            "Gemini API",
+            "Image Processing",
+            "Stripe",
+            "Lulu API",
+            "Automation"
           ]
         },
         {
           name: "UBUN.ONE",
           domain: "ubun.one",
           url: "https://ubun.one/",
-          text: "Private conversation space, taken over mid-build and closed.",
-          points: [
-            "Kept the vision already set: email access, a mode that saves, and a mode that stores nothing after the session.",
-            "Worked through the escalations and the mismatches in the design, and simplified the RAG agent so it could actually be changed.",
-            "Delivered it. The close was a working agent, not another handoff."
+          text:
+            "Privacy-focused conversational AI workspace supporting ephemeral and persistent conversation sessions.",
+          skills: [
+            "Python",
+            "FastAPI",
+            "LLMs",
+            "Session Management",
+            "REST APIs"
+          ]
+        },
+        {
+          name: "ParkPal",
+          domain: "",
+          url: "",
+          text:
+            "Real-time parking occupancy detection system combining a quantized object-detection model, RTSP camera streams, and a live dashboard.",
+          skills: [
+            "Python",
+            "OpenCV",
+            "YOLO",
+            "Computer Vision",
+            "Model Quantization",
+            "RTSP",
+            "Docker"
+          ]
+        },
+        {
+          name: "Autism Victory",
+          domain: "",
+          url: "",
+          text:
+            "Intelligent educational scheme discovery tool helping families and educators identify relevant programs and resources.",
+          skills: [
+            "Python",
+            "FastAPI",
+            "Semantic Search",
+            "Document Processing",
+            "Recommendation Systems"
           ]
         }
       ]
     },
-    {
-      role: "AI/ML Engineer",
-      company: "Kmphitech LLP",
-      companylogo: require("./assets/images/kmphitech.svg").default,
-      date: "May 2024 - Present",
-      desc: "Core ML products and the first production AI services.",
-      descBullets: [
-        "Built classification, extraction, and retrieval modules for the first generation of AI products.",
-        "Shipped real-time parking-lot vehicle detection with alerting dashboards.",
-        "Served models through FastAPI and Docker; used zero-shot and few-shot prompts to skip retrains."
-      ]
-    },
+
     {
       role: "AI Engineer Intern",
       company: "Aukture Technologies Pvt. Ltd",
-      companylogo: require("./assets/images/aukture.webp"),
+      companylogo: auktureLogo,
       date: "Jan 2024 - Mar 2024",
-      desc: "Remote. Virtual try-on and body measurement.",
+      location: "Remote",
+
+      desc:
+        "Worked on AI-driven virtual try-on and body-measurement workflows, combining computer vision, transformer-based methods, and generative modeling.",
+
+      highlights: [
+        "Reduced virtual try-on preprocessing time by 25%.",
+        "Worked with transformer-based approaches for body measurement.",
+        "Explored diffusion models to improve visual realism in generated results."
+      ],
+
       descBullets: [
-        "Cut virtual try-on preprocessing time by 25%.",
-        "Built transformer models for body measurement; diffusion for visual realism."
+        "Optimized preprocessing workflows to reduce turnaround time for virtual try-on tasks.",
+        "Contributed to transformer-based body-measurement approaches and image-related modeling workflows.",
+        "Explored diffusion-based techniques for improving visual output quality."
+      ],
+
+      skills: [
+        "Python",
+        "Computer Vision",
+        "Transformers",
+        "Diffusion Models",
+        "Image Processing",
+        "Model Optimization"
       ]
     },
+
     {
-      role: "Freelancer AI/ML Engineer",
+      role: "Freelance AI/ML Engineer",
       company: "Freelancer.com",
-      companylogo: require("./assets/images/freelancer.svg").default,
+      companylogo: freelancerLogo,
       date: "Jan 2023 - Dec 2023",
-      desc: "Freelance AI/ML projects for clients worldwide.",
+      location: "Remote · International Clients",
+
+      desc:
+        "Delivered client-focused AI/ML solutions, from understanding requirements and preparing data to model development, API integration, and project delivery.",
+
+      highlights: [
+        "Worked across multiple AI/ML problem types and client requirements.",
+        "Built custom models, data pipelines, and application-level AI features.",
+        "Managed technical discussions, solution scoping, implementation, and feedback-driven iteration."
+      ],
+
       descBullets: [
-        "Delivered custom ML models, data pipelines, and AI features for client products.",
-        "Scoped requirements, shipped end-to-end solutions, and iterated from client feedback."
+        "Translated client requirements into practical ML solutions and implementation plans.",
+        "Developed data preparation workflows, trained models, and integrated AI functionality into applications.",
+        "Worked on end-to-end delivery, troubleshooting, and iterative improvements based on client feedback.",
+        "Built an early foundation in independent problem-solving, technical communication, and delivery ownership."
+      ],
+
+      skills: [
+        "Python",
+        "Machine Learning",
+        "Data Processing",
+        "Model Development",
+        "API Integration",
+        "Client Communication",
+        "Solution Design"
       ]
     }
   ]
@@ -407,30 +529,22 @@ const openSource = {
 
 const bigProjects = {
   title: "Projects",
-  subtitle: "One production system in focus, then an earlier vision study.",
+  subtitle: "Featured projects and open-source systems.",
   projects: [
     {
-      image: require("./assets/images/contextflow.svg").default,
+      image: contextflowImg,
       projectName: "ContextFlow",
-      featured: true,
-      outcome:
-        "Open-source real-time voice AI with hybrid graph-vector RAG, agent crews, and eval in the loop.",
       projectDesc:
-        "FastAPI + CrewAI + LiveKit. Neo4j and pgvector fused with reciprocal rank fusion; Mem0 for memory. Quality checked with RAGAS and LangSmith.",
-      tech: ["Hybrid Graph-Vector RAG", "Neo4j + pgvector + RRF", "CrewAI", "LiveKit"],
-      metrics: [
-        {
-          label: "Retrieval relevance",
-          value: "+25% precision@k / recall@k"
-        },
-        {
-          label: "Stack",
-          value: "Graph + vector + RRF"
-        },
-        {
-          label: "Eval loop",
-          value: "RAGAS · LangSmith"
-        }
+        "Open-source real-time voice AI assistant with graph-vector retrieval, multi-agent coordination, and persistent conversation memory.",
+      tech: [
+        "Python",
+        "FastAPI",
+        "LiveKit",
+        "CrewAI",
+        "Neo4j",
+        "pgvector",
+        "LangSmith",
+        "Docker"
       ],
       footerLink: [
         {
@@ -440,22 +554,18 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/face-detection.webp"),
+      image: faceDetectionImg,
       projectName: "Emotion Detection",
-      outcome:
-        "Architecture comparison study for emotion recognition on a public affective dataset.",
       projectDesc:
-        "Compared VGG19 and AlexNet on the EMOTIC dataset. Early work in computer vision and affective computing. No published accuracy claim beyond the comparison itself.",
-      tech: ["VGG19", "AlexNet", "EMOTIC", "Flask"],
-      metrics: [
-        {
-          label: "Architectures",
-          value: "VGG19 vs AlexNet"
-        },
-        {
-          label: "Dataset",
-          value: "EMOTIC"
-        }
+        "Computer vision application comparing deep CNN architectures (VGG19 and AlexNet) for facial emotion recognition on the EMOTIC dataset, deployed with an interactive web interface.",
+      tech: [
+        "Python",
+        "PyTorch",
+        "OpenCV",
+        "VGG19",
+        "AlexNet",
+        "Flask",
+        "NumPy"
       ],
       footerLink: [
         {
@@ -475,7 +585,7 @@ const achievementSection = {
     {
       title: "Neural Networks and Deep Learning",
       subtitle: "Issued by DeepLearning.AI",
-      image: require("./assets/images/coursera-nn.webp"),
+      image: courseraNnImg,
       imageAlt: "DeepLearning.AI Neural Networks certificate",
       footerLink: [
         {
@@ -487,7 +597,7 @@ const achievementSection = {
     {
       title: "TensorFlow: Advanced Techniques",
       subtitle: "Issued by DeepLearning.AI",
-      image: require("./assets/images/certificate-1.webp"),
+      image: certificate1Img,
       imageAlt: "DeepLearning.AI TensorFlow certificate",
       footerLink: [
         {
@@ -499,7 +609,7 @@ const achievementSection = {
     {
       title: "Gujarat SSIP Hackathon Finalists",
       subtitle: "Azadi ka Amrit Mahotsav Hackathon-2022",
-      image: require("./assets/images/ssip-hackathon.svg").default,
+      image: ssipHackathonImg,
       imageAlt: "SSIP Hackathon certificate",
       footerLink: []
     }

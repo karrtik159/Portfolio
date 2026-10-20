@@ -58,10 +58,12 @@ function ProductReader({products, idPrefix}) {
             </a>
           ) : null}
           <p className="experience-product-text">{product.text}</p>
-          {product.points && product.points.length > 0 && (
-            <ul className="experience-product-points">
-              {product.points.map(point => (
-                <li key={point}>{point}</li>
+          {product.skills && product.skills.length > 0 && (
+            <ul className="product-skills-list" aria-label="Skills">
+              {product.skills.map(skill => (
+                <li key={skill} className="product-skill-badge">
+                  {skill}
+                </li>
               ))}
             </ul>
           )}

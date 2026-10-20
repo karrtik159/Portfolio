@@ -5,7 +5,7 @@ import Button from "../../components/button/Button";
 import classNames from "classnames";
 import {greeting, practiceSection} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
-import {ReactComponent as AiStackLayers} from "../../assets/images/ai-stack-layers.svg";
+import AiStackLayers from "../../assets/images/ai-stack-layers.svg?react";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);

@@ -25,13 +25,11 @@ export default function StartupProject() {
 
         <div className="projects-rail">
           {bigProjects.projects.map((project, i) => {
-            const featured = Boolean(project.featured) || i === 0;
             return (
               <article
                 key={i}
                 className={classNames("project-row", {
-                  "project-row-dark": isDark,
-                  "project-row-featured": featured
+                  "project-row-dark": isDark
                 })}
                 style={{"--project-i": i}}
               >
@@ -47,15 +45,9 @@ export default function StartupProject() {
                   </div>
                 ) : null}
                 <div className="project-detail">
-                  {featured ? (
-                    <p className="project-kicker">Featured system</p>
-                  ) : null}
                   <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
                     {project.projectName}
                   </h5>
-                  {project.outcome ? (
-                    <p className="project-outcome">{project.outcome}</p>
-                  ) : null}
                   <p
                     className={
                       isDark ? "dark-mode card-subtitle" : "card-subtitle"
@@ -64,21 +56,11 @@ export default function StartupProject() {
                     {project.projectDesc}
                   </p>
                   {project.tech && project.tech.length > 0 ? (
-                    <ul className="project-tech" aria-label="Technologies">
+                    <ul className="project-tech" aria-label="Skills & Technologies">
                       {project.tech.map(chip => (
                         <li key={chip}>{chip}</li>
                       ))}
                     </ul>
-                  ) : null}
-                  {project.metrics && project.metrics.length > 0 ? (
-                    <dl className="project-metrics">
-                      {project.metrics.map(metric => (
-                        <div className="project-metric" key={metric.label}>
-                          <dt>{metric.label}</dt>
-                          <dd>{metric.value}</dd>
-                        </div>
-                      ))}
-                    </dl>
                   ) : null}
                   {project.footerLink ? (
                     <div className="project-card-footer">
