@@ -1,4 +1,4 @@
-import {useRef, useState} from "react";
+import {useCallback, useRef, useState} from "react";
 
 export function useSelection(length, initialIndex = 0) {
   const safeStart =
@@ -6,11 +6,14 @@ export function useSelection(length, initialIndex = 0) {
   const [index, setIndex] = useState(safeStart);
   const tabsRef = useRef([]);
 
-  const select = next => {
-    if (!length) return;
-    const wrapped = ((next % length) + length) % length;
-    setIndex(wrapped);
-  };
+  const select = useCallback(
+    next => {
+      if (!length) return;
+      const wrapped = ((next % length) + length) % length;
+      setIndex(wrapped);
+    },
+    [length]
+  );
 
   const onKeyDown = event => {
     if (!length) return;

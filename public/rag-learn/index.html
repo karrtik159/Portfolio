@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>learn rag. no cap.</title>
+<meta name="description" content="Nine cards on RAG, chunking and retrieval. Tap the clickbait, get the real lesson and a slang hook you will actually remember.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-l">
+    <a class="mark" href="#top">rag.learn</a>
+    <p class="lead hero-s">Nine cards on RAG, chunking and retrieval. Tap the clickbait, get the real lesson and a slang hook you will actually remember.</p>
+    <a class="btn" href="#deck">start flipping</a>
+  </div>
+  <div class="hero-r">
+    <nav class="nav" aria-label="Sections">
+      <a href="#deck">the deck</a><a href="#pipeline">the pipeline</a><a href="#sheet">cheat sheet</a><a href="#faq">questions</a>
+    </nav>
+    <h1 class="display"><span class="mask"><span class="ln">learn rag.</span></span><span class="mask"><span class="ln">no cap.</span></span></h1>
+    <div class="hero-pic">
+      <img src="assets/inside-a-card-catalog-at-the-indiana.jpg" alt="A blue card in a library card catalogue reading: if you do not find here what you want, ask the librarian" width="1920" height="1440">
+      <div class="figure"><p class="fig-n">9 cards</p><p class="small">3 topics, 1 flip each</p></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="deck" id="deck" aria-labelledby="deck-h">
+  <div class="deck-top">
+    <h2 class="head soft" id="deck-h">pick a card</h2>
+    <p class="count lead" aria-live="polite"><span id="done">0</span> of 9 locked in</p>
+  </div>
+  <div class="group"><h3 class="group-h">rag</h3>
+    <div class="row field-1" data-id="receipts" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-receipts">
+        <span class="name">your ai is lying to you</span>
+        <span class="teaser">Not on purpose. It just never read your files.</span>
+      </button>
+      <div class="panel" id="p-receipts">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">What RAG is</p>
+            <p class="slang">receipts</p>
+            <p class="small">proof you show when someone doubts you</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">RAG makes the model bring receipts. It fetches your documents first, then answers from them, so you can check every claim.</p>
+            <p>A language model alone answers from what it memorised in training, which can be stale or missing your private data. Retrieval-Augmented Generation retrieves relevant chunks at question time, puts them in the prompt, and the model answers from that context. Sources can be cited.</p>
+            <details class="quiz"><summary>Which two steps does RAG add before the model answers?</summary><p>Retrieve relevant chunks, then put them in the prompt.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="receipts">got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row field-1" data-id="glowup" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-glowup">
+        <span class="name">the open-book cheat code</span>
+        <span class="teaser">Two ways to make a model smarter. Only one of them updates by Friday.</span>
+      </button>
+      <div class="panel" id="p-glowup">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">RAG vs fine-tuning</p>
+            <p class="slang">glow-up</p>
+            <p class="small">a real change in how someone looks or acts</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">Fine-tuning is the glow-up: it changes how the model behaves. RAG is the fresh notes: it changes what the model can look up today.</p>
+            <p>Use RAG when knowledge changes often or answers must be cited. Use fine-tuning to change style, format or behaviour. They can be combined. Long context can work for small document sets, but cost and latency grow with the tokens you send.</p>
+            <details class="quiz"><summary>Your policies change every month and answers need sources. RAG or fine-tuning?</summary><p>RAG. Update the documents, not the model.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="glowup">got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row field-1" data-id="mid" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-mid">
+        <span class="name">why your bot is mid</span>
+        <span class="teaser">Hint: it is almost never the model.</span>
+      </button>
+      <div class="panel" id="p-mid">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">Why RAG answers fail</p>
+            <p class="slang">mid</p>
+            <p class="small">mediocre, not good and not terrible</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">Mid retrieval, mid answer. If the right chunk never reaches the prompt, no model can save you.</p>
+            <p>Debug in order. Print the retrieved chunks for a failing question. If the answer is not in them, fix chunking or search. If it is there, fix the prompt, the chunk order or the model. Tell the model to say it does not know when the context lacks the answer.</p>
+            <details class="quiz"><summary>A wrong answer, and the right text exists in your docs. What do you check first?</summary><p>The retrieved chunks. Retrieval fails more often than the model does.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="mid">got it</button>
+          </div>
+        </div>
+      </div>
+    </div></div><div class="group"><h3 class="group-h">chunking</h3>
+    <div class="row field-2" data-id="yap" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-yap">
+        <span class="name">stop slicing docs like this</span>
+        <span class="teaser">Your chunks are either too tiny or yapping about five things.</span>
+      </button>
+      <div class="panel" id="p-yap">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">Chunking basics</p>
+            <p class="slang">no yap</p>
+            <p class="small">yap means talking too much, so no yap means get to the point</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">Every chunk gets one idea and no yapping. Self-contained, on topic, then stop.</p>
+            <p>Chunking splits documents into retrievable pieces. Too small loses context such as pronouns and definitions. Too large blurs several topics into one vector and wastes prompt tokens. A common starting point is a few hundred tokens, then tune it against real questions.</p>
+            <details class="quiz"><summary>What is the goal of a good chunk?</summary><p>Self-contained and about one idea.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="yap">got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row field-2" data-id="runitback" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-runitback">
+        <span class="name">the overlap glitch fix</span>
+        <span class="teaser">Your answer got cut in half and nobody noticed.</span>
+      </button>
+      <div class="panel" id="p-runitback">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">Chunk overlap</p>
+            <p class="slang">run it back</p>
+            <p class="small">do it again</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">Run it back: repeat the last bit of one chunk at the start of the next, so a sentence cut at the edge still lands.</p>
+            <p>Overlap shares text between neighbouring chunks. Around 10 to 20 percent of the chunk size is a common starting point. More overlap costs more storage and returns near-duplicate results, so it is a trade-off, not a free win.</p>
+            <details class="quiz"><summary>What is the downside of a lot of overlap?</summary><p>More storage and duplicate-looking results.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="runitback">got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row field-2" data-id="lowkey" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-lowkey">
+        <span class="name">search small, read big</span>
+        <span class="teaser">The cheat for precise matching with full context.</span>
+      </button>
+      <div class="panel" id="p-lowkey">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">Parent-child retrieval</p>
+            <p class="slang">lowkey / highkey</p>
+            <p class="small">lowkey is quietly or a little, highkey is openly or a lot</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">Search lowkey, read highkey. Match on small chunks, then hand the model the bigger section around the match.</p>
+            <p>Small chunks match questions precisely. Big chunks give the model enough context to answer. Parent-child retrieval indexes the small ones and returns their larger parent section, so you get both.</p>
+            <details class="quiz"><summary>Which size do you index and which do you send to the LLM?</summary><p>Index the small chunk, send the larger parent.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="lowkey">got it</button>
+          </div>
+        </div>
+      </div>
+    </div></div><div class="group"><h3 class="group-h">retrieval</h3>
+    <div class="row field-3" data-id="vibecheck" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-vibecheck">
+        <span class="name">bm25 vs vibes</span>
+        <span class="teaser">One of them cannot find error code E-4021. Guess which.</span>
+      </button>
+      <div class="panel" id="p-vibecheck">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">Keyword vs vector search</p>
+            <p class="slang">vibe check</p>
+            <p class="small">a quick test of whether something feels right</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">Vector search is the vibe check: it matches meaning. BM25 is exact match: it matches the words you typed.</p>
+            <p>BM25 scores literal word overlap, so it is strong on identifiers, names and codes. Dense vector search compares embeddings, so it is strong on paraphrases but can blur rare tokens. Neither wins everywhere.</p>
+            <details class="quiz"><summary>Which one do you reach for to find an exact product code?</summary><p>BM25, the keyword search.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="vibecheck">got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row field-3" data-id="wcombo" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-wcombo">
+        <span class="name">the w combo search</span>
+        <span class="teaser">Why serious teams run two searches at once.</span>
+      </button>
+      <div class="panel" id="p-wcombo">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">Hybrid search</p>
+            <p class="slang">W combo</p>
+            <p class="small">W means win, so a combo that wins twice</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">Keyword plus vector is the W combo. Run both, then merge the two ranked lists.</p>
+            <p>Hybrid search runs BM25 and vector search, then merges the rankings. Reciprocal Rank Fusion is a simple merge: each document scores the sum of 1 divided by (k + rank) across lists, with k often 60.</p>
+            <details class="quiz"><summary>What does Reciprocal Rank Fusion do?</summary><p>Merges several ranked lists into one by summing 1 / (k + rank).</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="wcombo">got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row field-3" data-id="gatekeep" data-rise>
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p-gatekeep">
+        <span class="name">the bouncer for your top-k</span>
+        <span class="teaser">The right chunk showed up. It was ranked 14th.</span>
+      </button>
+      <div class="panel" id="p-gatekeep">
+        <div class="panel-in">
+          <div class="panel-a">
+            <p class="lead">Reranking</p>
+            <p class="slang">gatekeep</p>
+            <p class="small">to control who gets access</p>
+          </div>
+          <div class="panel-b">
+            <p class="hook">The reranker gatekeeps your prompt. Fetch many candidates, let it decide which few get in.</p>
+            <p>A cross-encoder reads the query and each candidate together and re-scores them. It is slower than first-stage search but more accurate, so you fetch roughly 20 to 50 candidates and keep the best 3 to 5.</p>
+            <details class="quiz"><summary>When do you add a reranker?</summary><p>When the right chunk is retrieved but ranked too low.</p></details>
+            <button class="got" type="button" aria-pressed="false" data-got="gatekeep">got it</button>
+          </div>
+        </div>
+      </div>
+    </div></div>
+</section>
+
+<figure class="band" data-par>
+  <img src="assets/2015-10-5-img-3568-karteischrank.jpg" alt="A wooden card-index cabinet with two drawers pulled open" width="1920" height="1280">
+  <figcaption class="band-cap"><p class="lead">Retrieval is a very fast librarian. Fetch the right drawer, not the whole building.</p></figcaption>
+</figure>
+
+<section class="pipe" id="pipeline" aria-labelledby="pipe-h">
+  <div class="pipe-intro">
+    <h2 class="head" id="pipe-h">the pipeline</h2>
+    <p class="body-p">Every RAG app is the same five moves. Tap a stage to open it, and keep one slang word per move.</p>
+  </div>
+  <div class="stages">
+    <div class="stage s1" data-open="true">
+      <button class="stage-btn" type="button" aria-expanded="true" aria-controls="st-0"><span class="stage-name">parse</span></button>
+      <div class="stage-body" id="st-0">
+        <div class="stage-copy">
+          <p class="slang-s">clean fit</p>
+          <p>Turn PDFs, pages and tickets into clean text. Bad extraction ruins everything after it, so look at the output yourself.</p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="stage s2" data-open="false">
+      <button class="stage-btn" type="button" aria-expanded="false" aria-controls="st-1"><span class="stage-name">chunk</span></button>
+      <div class="stage-body" id="st-1">
+        <div class="stage-copy">
+          <p class="slang-s">no yap</p>
+          <p>Cut the text into self-contained pieces about one idea each, with a little overlap and metadata like source and page.</p>
+        </div>
+        <img src="assets/2015-10-5-img-3568-karteischrank.jpg" alt="A wooden card-index cabinet with two drawers pulled open" width="1000" height="1000">
+      </div>
+    </div>
+    <div class="stage s3" data-open="false">
+      <button class="stage-btn" type="button" aria-expanded="false" aria-controls="st-2"><span class="stage-name">embed</span></button>
+      <div class="stage-body" id="st-2">
+        <div class="stage-copy">
+          <p class="slang-s">vibe coordinates</p>
+          <p>Turn each chunk into a vector that places its meaning in space. Use the same embedding model for chunks and questions.</p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="stage s4" data-open="false">
+      <button class="stage-btn" type="button" aria-expanded="false" aria-controls="st-3"><span class="stage-name">retrieve</span></button>
+      <div class="stage-body" id="st-3">
+        <div class="stage-copy">
+          <p class="slang-s">pull up</p>
+          <p>Find the nearest chunks for the question, mix in keyword search, rerank, and keep the top few.</p>
+        </div>
+        <img src="assets/bookwheel-roue-a-livres.jpg" alt="A carved wooden book wheel with two reading desks" width="1000" height="1000">
+      </div>
+    </div>
+    <div class="stage s5" data-open="false">
+      <button class="stage-btn" type="button" aria-expanded="false" aria-controls="st-4"><span class="stage-name">generate</span></button>
+      <div class="stage-body" id="st-4">
+        <div class="stage-copy">
+          <p class="slang-s">ate</p>
+          <p>Put the chunks in the prompt, tell the model to answer only from them and cite sources, and let it say it does not know.</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet" id="sheet" aria-labelledby="sheet-h">
+  <h2 class="head" id="sheet-h">cheat sheet</h2>
+  <div class="table">
+    <h3 class="day">chunking</h3>
+    <div class="trow" data-rise><span>chunk size</span><span>how much text per chunk</span><span>no yap</span><span class="num">300 to 800 tokens</span></div><div class="trow" data-rise><span>overlap</span><span>text repeated at the edges</span><span>run it back</span><span class="num">10 to 20 percent</span></div>
+    <h3 class="day">retrieval</h3>
+    <div class="trow" data-rise><span>candidates</span><span>chunks fetched before reranking</span><span>cast wide</span><span class="num">20 to 50</span></div><div class="trow" data-rise><span>top-k</span><span>chunks that reach the prompt</span><span>pull up</span><span class="num">3 to 5</span></div><div class="trow" data-rise><span>reranker</span><span>second pass that re-scores</span><span>gatekeep</span><span class="num">cross-encoder</span></div><div class="trow" data-rise><span>hybrid merge</span><span>keyword plus vector</span><span>W combo</span><span class="num">RRF with k = 60</span></div>
+    <h3 class="day">testing</h3>
+    <div class="trow" data-rise><span>eval set</span><span>real questions with known answers</span><span>receipts</span><span class="num">30 to 50 questions</span></div><div class="trow" data-rise><span>hit rate</span><span>right chunk in the top k</span><span>vibe check</span><span class="num">track it every change</span></div>
+  </div>
+  <p class="note">Starting points from common practice. Tune them on your own documents.</p>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <div class="faq-l">
+    <h2 class="head" id="faq-h">questions</h2>
+    <div class="faq-pic" data-par><img src="assets/bookwheel-roue-a-livres.jpg" alt="A carved wooden book wheel with two reading desks" width="1920" height="2560"></div>
+  </div>
+  <div class="tiles">
+      <details name="faq" class="tile"><summary>Does RAG remove hallucinations?<span class="plus" aria-hidden="true"></span></summary><p>No. It reduces them when retrieval is good and the prompt demands grounding. Bad retrieval can still produce a confident wrong answer.</p></details>
+      <details name="faq" class="tile"><summary>How do I choose top-k?<span class="plus" aria-hidden="true"></span></summary><p>Start with 3 to 5 small chunks. Raise it if answers miss information, lower it if the context gets noisy. Measure instead of guessing.</p></details>
+      <details name="faq" class="tile"><summary>How do I evaluate a RAG system?<span class="plus" aria-hidden="true"></span></summary><p>Score retrieval (hit rate, MRR) and generation (faithfulness to the context, answer relevance) separately, using a small set of real questions with known answers.</p></details>
+      <details name="faq" class="tile"><summary>Do I need a vector database?<span class="plus" aria-hidden="true"></span></summary><p>Not always. FAISS, Chroma or pgvector are enough for small data, and keyword search such as BM25 or SQL full-text is a valid retriever on its own.</p></details>
+      <details name="faq" class="tile"><summary>Characters or tokens for chunk size?<span class="plus" aria-hidden="true"></span></summary><p>Tokens match model limits better. Characters are fine for a first version. Be consistent and know which one your splitter uses.</p></details>
+      <details name="faq" class="tile"><summary>How do I show sources?<span class="plus" aria-hidden="true"></span></summary><p>Store source and page as chunk metadata, pass them in the prompt, and ask the model to cite chunk numbers.</p></details>
+      <details name="faq" class="tile"><summary>Can I trust these numbers?<span class="plus" aria-hidden="true"></span></summary><p>They are starting points from common practice, not laws. Test them on your own documents and questions.</p></details>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-pic"><img src="assets/salle-des-catalogues-de-la-bibliotheque-mazarine.jpg" alt="The catalogue room of the Mazarine Library in Paris, card drawers lining the walls" width="1920" height="1440"></div>
+  <div class="foot-menu">
+    <a class="mark" href="#top">rag.learn</a>
+    <nav class="menu" aria-label="Footer"><a href="#deck">the deck</a><a href="#pipeline">the pipeline</a><a href="#sheet">cheat sheet</a><a href="#faq">questions</a><a href="#top">back to top</a></nav>
+    <div class="foot-blocks">
+      <p>Content lives in data/content.json. Add a lesson, run node build.mjs.</p>
+      <p>Built local, no tracking. Progress stays in your browser.</p>
+    </div>
+    <p class="legal">Study notes, not official documentation. Verify numbers on your own data.</p>
+  </div>
+</footer>
+<div class="credits-wrap"><p class="credits small">Pictures: <a href="https://commons.wikimedia.org/wiki/File:Inside_a_card_catalog_at_the_Indiana_State_Library_-_ask_the_librarian.jpg">Inside a card catalog at the Indiana State Library</a> by TBurmeister (WMF), <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Salle_des_catalogues_de_la_Bibliotheque_Mazarine_Paris.jpg">Salle des catalogues de la Bibliotheque Mazarine</a> by Marie-Lan Nguyen, <a href="https://creativecommons.org/licenses/by/2.0/fr/deed.en">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Bookwheel_(Roue_%C3%A0_livres).jpg">Bookwheel (Roue à livres)</a> by Mafarkafut, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>; <a href="https://commons.wikimedia.org/wiki/File:2015_10_5_IMG_3568_Karteischrank.JPG">Karteischrank</a> by Dr. Karl-Heinz Hochhaus, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. All via Wikimedia Commons.</p></div>
+<script src="site.js"></script>
+</body>
+</html>
