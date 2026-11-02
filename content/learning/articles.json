@@ -1,0 +1,19 @@
+[
+  {
+    "slug": "how-my-focus-moved",
+    "type": "article",
+    "title": "How my focus moved, from deep learning to evaluation",
+    "summary": "The five stretches of learning behind the work, from coursework to production quality and cost.",
+    "date": "2026-11-03",
+    "tags": ["Learning", "Evaluation"]
+  },
+  {
+    "slug": "learn-rag",
+    "type": "site",
+    "title": "Learn RAG in nine cards",
+    "summary": "My own mini-site on retrieval, chunking and search.",
+    "date": "2026-10-01",
+    "url": "../rag-learn/",
+    "tags": ["RAG"]
+  }
+]
