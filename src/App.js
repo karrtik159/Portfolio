@@ -53,9 +53,6 @@ function Portfolio() {
               AI, built for
               <br />
               the <em>real world.</em>
-              <span className="hero-asterisk" aria-hidden="true">
-                ✳
-              </span>
             </h1>
             <div className="hero-bottom">
               <p>

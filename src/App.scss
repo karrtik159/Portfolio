@@ -194,14 +194,6 @@ footer a:hover {
 .hero h1 em {
   color: var(--accent);
 }
-.hero-asterisk {
-  position: absolute;
-  right: 0;
-  top: 10px;
-  font-size: 100px;
-  color: var(--accent);
-  font-weight: 400;
-}
 .hero-bottom {
   display: flex;
   justify-content: space-between;
@@ -624,10 +616,6 @@ button {
   .page-shell {
     width: calc(100% - 64px);
   }
-  .hero-asterisk {
-    right: 8px;
-    font-size: 72px;
-  }
   .hero-bottom {
     gap: 32px;
   }
@@ -693,12 +681,6 @@ button {
     font-size: clamp(43px, 8.8vw, 68px);
     margin: 32px 0 24px;
     letter-spacing: -0.05em;
-  }
-  .hero-asterisk {
-    font-size: 48px;
-    right: 8px;
-    top: -8px;
-    display: none;
   }
   .hero-bottom {
     display: block;
