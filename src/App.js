@@ -14,7 +14,7 @@ import {
 } from "./contexts/SkillSelectionContext";
 import ProjectSkillEvidence from "./components/ProjectSkillEvidence";
 const resume =
-  "https://drive.google.com/file/d/19VQ-2pt2qmtOSjJUUATaFny9GVZRp-V_/view?usp=sharing";
+  "https://drive.google.com/file/d/1qJqU2EjBgP7D9UTdWRa-WaGlCSv-TTVq/view?usp=sharing";
 function Portfolio() {
   const {selection, label, examples, selectGroup, clear, match} =
     useSkillSelection();
