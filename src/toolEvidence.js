@@ -218,15 +218,15 @@ export const toolEvidence = {
   GCP: [
     {
       target: "senior-ai-engineer",
-      project: "Kmphitech · deployment platform",
+      project: "Kmphitech · GetSetBook deployment",
       built:
-        "Ran production FastAPI and PostgreSQL services on GCP and KVM virtual servers, provisioned with Terraform and served behind Cloudflare DNS."
+        "Ran GetSetBook's production FastAPI and PostgreSQL services on GCP and KVM virtual servers, provisioned with Terraform and served behind Cloudflare DNS."
     }
   ],
   Terraform: [
     {
       target: "senior-ai-engineer",
-      project: "Kmphitech · deployment platform",
+      project: "Kmphitech · GetSetBook deployment",
       built:
         "Provisioned GCP and KVM server infrastructure with Terraform, connected to a CI/CD pipeline that tests, deploys and restarts services."
     }
@@ -234,7 +234,7 @@ export const toolEvidence = {
   "CI/CD": [
     {
       target: "senior-ai-engineer",
-      project: "Kmphitech · deployment platform",
+      project: "Kmphitech · GetSetBook deployment",
       built:
         "Built a CI/CD pipeline that tests, deploys and restarts Dockerised FastAPI services on GCP and KVM servers."
     },

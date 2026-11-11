@@ -37,7 +37,7 @@ export const experience = [
       "Improved retrieval relevance by 25% across 8 configurations on a knowledge graph of 50K+ entities, measured with precision@k and recall@k.",
       "Evaluated 5+ models for response quality, retrieval accuracy, latency, and cost; reduced inference spend by 30%.",
       "Productionized 6 AI microservices with Docker, CI/CD, and auto-scaling alongside backend and DevOps teams, sustaining 99.5% uptime with Langfuse monitoring.",
-      "Built and ran the deployment platform: Terraform-provisioned GCP and KVM virtual servers, Dockerised FastAPI and PostgreSQL services behind Cloudflare DNS, and a CI/CD pipeline that tests, deploys and restarts services. Integrated Stripe payments and Elastic Email.",
+      "Built and ran the production deployment for GetSetBook: Terraform-provisioned GCP and KVM virtual servers, Dockerised FastAPI and PostgreSQL services behind Cloudflare DNS, and a CI/CD pipeline that tests, deploys and restarts services. Integrated Stripe payments and Elastic Email.",
       "Standardized MLflow and Weights & Biases tracking across 20+ experiments; mentored 3 engineers, reducing ramp-up from 4 to 2 weeks."
     ]
   },

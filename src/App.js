@@ -315,7 +315,7 @@ function Portfolio() {
                   <h3>Computer Engineering · Artificial Intelligence</h3>
                   <p>
                     U.V. Patel College of Engineering, Ganpat University ·
-                    2019–2023 · CGPA 8.66 / 10 · Ranked 2nd in batch
+                    2019–2023 · CGPA 8.66 / 10 · Ranked 2nd in AI department
                   </p>
                   <p>
                     Finalist, Gujarat SSIP Azadi ka Amrit Mahotsav Hackathon

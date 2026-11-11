@@ -130,7 +130,7 @@ export const skillEvidence = [
         target: "senior-ai-engineer",
         project: "Kmphitech · AI services",
         built:
-          "Shipped 6 AI microservices with Docker, CI/CD, and auto-scaling alongside backend and DevOps teams; sustained 99.5% uptime. Ran Terraform-provisioned GCP and KVM servers behind Cloudflare DNS."
+          "Shipped 6 AI microservices with Docker, CI/CD, and auto-scaling alongside backend and DevOps teams; sustained 99.5% uptime. Ran GetSetBook's Terraform-provisioned GCP and KVM servers behind Cloudflare DNS."
       }
     ]
   }

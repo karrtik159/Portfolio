@@ -17,7 +17,7 @@ Last reviewed 11 November 2026. Source-backed content for the portfolio and CV. 
 | Role                                               | Dates             | Facts                                                                                                                                                                                                                                                                                                                                         | Source                       |
 | -------------------------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
 | Senior AI/ML Engineer, Kmphitech LLP, Surat        | May 2025–Present  | Led proprietary LLM products from research to production; Agentic/Graph/Hybrid RAG over 50K+ graph entities, +25% relevance (precision@k, recall@k) across 8 configurations; 5+ models evaluated, −30% inference spend; 6 AI microservices, 99.5% uptime, Langfuse; 20+ experiments in MLflow / W&B; mentored 3 engineers, ramp-up 4→2 weeks. | Résumés (Oct 2026, Dec 2025) |
-| (same role) deployment platform                    | —                 | GCP and KVM 4 / KVM 8 virtual servers, Terraform, Dockerised FastAPI and PostgreSQL, Cloudflare DNS, Elastic Email, Stripe, CI/CD that tests, deploys and restarts services.                                                                                                                                                                  | Owner-stated, 11 Nov 2026    |
+| (same role) GetSetBook deployment                  | —                 | Kmphitech project GetSetBook: GCP and KVM 4 / KVM 8 virtual servers, Terraform, Dockerised FastAPI and PostgreSQL, Cloudflare DNS, Elastic Email, Stripe, CI/CD that tests, deploys and restarts services.                                                                                                                                    | Owner-stated, 11 Nov 2026    |
 | AI/ML Engineer, Kmphitech LLP                      | May 2024–May 2025 | Core classification, extraction and retrieval modules for first-generation AI products; parking vehicle detection, 8 streams, 25+ FPS, 92% mAP (IoU threshold unstated); prompting on 4 NLP tasks, −50% retraining cycles.                                                                                                                    | Résumés (Oct 2026, Dec 2025) |
 | AI Engineer Intern, Aukture Technologies Pvt. Ltd. | Jan–Mar 2024      | −25% preprocessing time; transformer body-measurement and posture models, ±2 cm mean error; diffusion models for realism.                                                                                                                                                                                                                     | Résumés                      |
 | Freelance AI/ML Engineer                           | May–Dec 2023      | 5.0 rating, 100% completion; Detectron2 Faster R-CNN on COWC, 85% mAP@0.5, 2K+ tiles; DBSCAN on 1M+ point LiDAR scenes; pruning −40% size, −30% inference, <1% mAP loss.                                                                                                                                                                      | Résumé (Oct 2026)            |
@@ -31,8 +31,8 @@ Last reviewed 11 November 2026. Source-backed content for the portfolio and CV. 
 
 ## Education and certificates
 
-- B.E. Computer Engineering (Artificial Intelligence), U.V. Patel College of Engineering, Ganpat University, Jun 2019–May 2023, CGPA 8.66/10. Ranked 2nd in batch (owner-stated).
-- Gujarat SSIP Azadi ka Amrit Mahotsav Hackathon 2022, Pension Classification (ML + React/Django reports).
+- B.E. Computer Engineering (Artificial Intelligence), U.V. Patel College of Engineering, Ganpat University, Jun 2019–May 2023, CGPA 8.66/10. Ranked 2nd in the AI department (owner-stated).
+- Finalist, Gujarat SSIP Azadi ka Amrit Mahotsav Hackathon 2022 (owner-stated; no certificate on file), Pension Classification (ML + React/Django reports).
 - Command and Control Centre, Gandhinagar, 2022: Power BI + ML dashboard on student dropout and migration.
 - TensorFlow: Advanced Techniques Specialization, 4 courses, 31 Aug 2025: [verify](https://coursera.org/verify/specialization/8679J70FQKWW).
 - Improving Deep Neural Networks, 16 Jul 2024: [verify](https://coursera.org/verify/5CDNFC3LYJP2).
@@ -50,8 +50,6 @@ Last reviewed 11 November 2026. Source-backed content for the portfolio and CV. 
 Delete each line once resolved.
 
 - ContextFlow security and metrics work is on `fix/rag-tenant-scoping`, not `main`, and 11 commits are unpushed. Merge before deploying the portfolio.
-- Deployment platform: confirm employer (Kmphitech or other), GCP services, CI/CD tool, and whether restarts are health-checked.
-- SSIP hackathon: confirm finalist or participant; no certificate found.
-- Batch rank: confirm scope (AI branch, department or university).
+- GetSetBook deployment: which GCP services, which CI/CD tool, and whether restarts are health-checked.
 - Wood/bark LiDAR: one résumé dates it Aug 2022 as a project, another lists it under freelance work.
 - Production metrics still missing: p95 latency, requests/day, deploy time.
