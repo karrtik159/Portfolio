@@ -948,6 +948,58 @@ button {
   color: var(--muted);
   margin-top: var(--space-3);
 }
+.certificates {
+  margin-top: var(--space-8);
+}
+.certificates ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+.certificates a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--white);
+  overflow: hidden;
+  transition: border-color var(--duration) ease;
+}
+.certificates a:hover {
+  border-color: var(--accent);
+}
+.certificates img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--line);
+}
+.certificate-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  flex: 1;
+}
+.certificate-copy strong {
+  font-size: 14px;
+  line-height: 1.35;
+}
+.certificate-copy .mono {
+  color: var(--muted);
+}
+.certificates .certificate-verify {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  color: var(--accent);
+}
+.certificates a:hover .certificate-verify {
+  color: var(--accent-hover);
+}
 /* Each project's copy flows independently of its image height. */
 .project-copy {
   min-width: 0;

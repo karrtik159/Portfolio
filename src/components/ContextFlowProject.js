@@ -127,13 +127,21 @@ export default function ContextFlowProject() {
           <h4>Evaluation status</h4>
           <p>
             RAGAS answer-level evaluation is scaffolded with fixture cases.
-            Retrieval metrics are planned once retrieved contexts are exposed
-            for evaluation. LangSmith / OpenTelemetry provide execution tracing.
+            Retrieval metrics (recall@k, precision@k, MRR, nDCG) run against a
+            golden set that includes deliberately unanswerable queries.
+            LangSmith / OpenTelemetry provide execution tracing.
+          </p>
+          <h4>Security hardening</h4>
+          <p>
+            The agent that reads retrieved content has no tools, which closes a
+            stored prompt-injection to data-exfiltration path. Per-tenant rate
+            limits cap LLM and embedding spend, and older tokens are revoked
+            after a password change.
           </p>
           <small>
-            Technical details verified against the public repository README.
-            This overview describes the architecture; it does not claim
-            benchmark results for ContextFlow.
+            Technical details verified against the repository source. This
+            overview describes the architecture; it does not claim benchmark
+            results for ContextFlow.
           </small>
         </div>
       </details>

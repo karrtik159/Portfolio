@@ -5,6 +5,7 @@ import SkillEvidence from "./components/SkillEvidence";
 import IndependentProject from "./components/IndependentProject";
 import PortfolioContact from "./components/PortfolioContact";
 import ProductionApps from "./components/ProductionApps";
+import Certificates from "./components/Certificates";
 import {capabilities, experience} from "./aiPortfolio";
 import {projects} from "./projects";
 import "./App.scss";
@@ -121,7 +122,7 @@ function Portfolio() {
               <div>
                 <strong>6</strong>
                 <p>AI microservices shipped</p>
-                <small>Docker · CI/CD · auto-scaling</small>
+                <small>GCP · Terraform · CI/CD</small>
               </div>
               <div>
                 <strong>
@@ -314,12 +315,15 @@ function Portfolio() {
                   <h3>Computer Engineering · Artificial Intelligence</h3>
                   <p>
                     U.V. Patel College of Engineering, Ganpat University ·
-                    2019–2023 · CGPA 8.66 / 10
+                    2019–2023 · CGPA 8.66 / 10 · Ranked 2nd in batch
                   </p>
                   <p>
-                    DeepLearning.AI: Neural Networks and Deep Learning ·
-                    TensorFlow: Advanced Techniques
+                    Finalist, Gujarat SSIP Azadi ka Amrit Mahotsav Hackathon
+                    2022 (ML pension-scheme classification) · Data-analysis
+                    projects for the Command and Control Centre, Gandhinagar:
+                    Power BI and ML dashboards on student dropout and migration
                   </p>
+                  <Certificates />
                 </div>
               </div>
             </div>

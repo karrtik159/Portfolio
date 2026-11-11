@@ -62,7 +62,7 @@ export const toolEvidence = {
       target: "contextflow",
       project: "ContextFlow",
       built:
-        "Scaffolded answer-level RAG evaluation with fixture cases. Retrieval metrics remain planned; no completed retrieval benchmark is claimed."
+        "Scaffolded answer-level RAG evaluation with fixture cases, alongside separately implemented retrieval metrics (recall@k, MRR, nDCG). No completed benchmark result is claimed yet."
     }
   ],
   LangSmith: [
@@ -215,7 +215,29 @@ export const toolEvidence = {
         "Productionized 6 Docker-based AI microservices with backend and DevOps teams."
     }
   ],
+  GCP: [
+    {
+      target: "senior-ai-engineer",
+      project: "Kmphitech · deployment platform",
+      built:
+        "Ran production FastAPI and PostgreSQL services on GCP and KVM virtual servers, provisioned with Terraform and served behind Cloudflare DNS."
+    }
+  ],
+  Terraform: [
+    {
+      target: "senior-ai-engineer",
+      project: "Kmphitech · deployment platform",
+      built:
+        "Provisioned GCP and KVM server infrastructure with Terraform, connected to a CI/CD pipeline that tests, deploys and restarts services."
+    }
+  ],
   "CI/CD": [
+    {
+      target: "senior-ai-engineer",
+      project: "Kmphitech · deployment platform",
+      built:
+        "Built a CI/CD pipeline that tests, deploys and restarts Dockerised FastAPI services on GCP and KVM servers."
+    },
     {
       target: "senior-ai-engineer",
       project: "Kmphitech · AI services",
